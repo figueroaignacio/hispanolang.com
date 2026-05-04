@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 interface UseSpeechOptions {
   lang?: string;
@@ -21,23 +21,23 @@ function cleanTextForSpeech(text: string): string {
   return (
     text
       // Remover bloques de código multilínea (estos sí se omiten)
-      .replace(/```[\s\S]*?```/g, "")
+      .replace(/```[\s\S]*?```/g, '')
       // Mantener contenido de código inline, solo quitar los backticks
-      .replace(/`([^`]+)`/g, "$1")
+      .replace(/`([^`]+)`/g, '$1')
       // Remover markdown de formato
-      .replace(/\*\*([^*]+)\*\*/g, "$1")
-      .replace(/\*([^*]+)\*/g, "$1")
-      .replace(/__([^_]+)__/g, "$1")
-      .replace(/_([^_]+)_/g, "$1")
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/\*([^*]+)\*/g, '$1')
+      .replace(/__([^_]+)__/g, '$1')
+      .replace(/_([^_]+)_/g, '$1')
       // Remover headers markdown
-      .replace(/#{1,6}\s/g, "")
+      .replace(/#{1,6}\s/g, '')
       // Remover links markdown
-      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
       // Remover bullets y números de lista
-      .replace(/^[\s]*[-*+]\s/gm, "")
-      .replace(/^[\s]*\d+\.\s/gm, "")
+      .replace(/^[\s]*[-*+]\s/gm, '')
+      .replace(/^[\s]*\d+\.\s/gm, '')
       // Limpiar espacios múltiples
-      .replace(/\s+/g, " ")
+      .replace(/\s+/g, ' ')
       .trim()
   );
 }
@@ -47,20 +47,13 @@ function getVoicePriority(voice: SpeechSynthesisVoice): number {
   const name = voice.name.toLowerCase();
 
   // Voces de Google (Chrome) - muy naturales
-  if (name.includes("google")) return 100;
+  if (name.includes('google')) return 100;
 
   // Voces de Microsoft (Edge) - muy naturales
-  if (name.includes("microsoft") || name.includes("azure")) return 90;
+  if (name.includes('microsoft') || name.includes('azure')) return 90;
 
   // Voces premium de Apple (macOS/iOS)
-  const applePremiuNames = [
-    "mónica",
-    "monica",
-    "jorge",
-    "paulina",
-    "diego",
-    "marisol",
-  ];
+  const applePremiuNames = ['mónica', 'monica', 'jorge', 'paulina', 'diego', 'marisol'];
   if (applePremiuNames.some((n) => name.includes(n))) return 85;
 
   // Voces de red (no locales) suelen ser de mejor calidad
@@ -73,7 +66,7 @@ function getVoicePriority(voice: SpeechSynthesisVoice): number {
 }
 
 function selectBestVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | null {
-  const spanishVoices = voices.filter((v) => v.lang.startsWith("es"));
+  const spanishVoices = voices.filter((v) => v.lang.startsWith('es'));
 
   if (spanishVoices.length === 0) return null;
 
@@ -82,7 +75,7 @@ function selectBestVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice |
 }
 
 export function useSpeech(options: UseSpeechOptions = {}): UseSpeechReturn {
-  const { lang = "es-ES", rate = 0.95, pitch = 1 } = options;
+  const { lang = 'es-ES', rate = 0.95, pitch = 1 } = options;
 
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -91,8 +84,7 @@ export function useSpeech(options: UseSpeechOptions = {}): UseSpeechReturn {
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   useEffect(() => {
-    const supported =
-      typeof window !== "undefined" && "speechSynthesis" in window;
+    const supported = typeof window !== 'undefined' && 'speechSynthesis' in window;
     setIsSupported(supported);
 
     if (!supported) return;
@@ -139,7 +131,9 @@ export function useSpeech(options: UseSpeechOptions = {}): UseSpeechReturn {
       utterance.pitch = pitch;
 
       // Seleccionar la mejor voz disponible
-      const bestVoice = selectBestVoice(voices.length > 0 ? voices : window.speechSynthesis.getVoices());
+      const bestVoice = selectBestVoice(
+        voices.length > 0 ? voices : window.speechSynthesis.getVoices()
+      );
       if (bestVoice) {
         utterance.voice = bestVoice;
       }

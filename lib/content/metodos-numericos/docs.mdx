@@ -18,11 +18,11 @@ mostrar otro + " es impar: " + otro.esImpar() // 17 es impar: verdadero
 
 // Clasificar números
 para (variable i = 1; i <= 6; i++) {
-    si i.esPar() {
-        mostrar i + " → Par" // 2 → Par, 4 → Par, 6 → Par
-    } sino {
-        mostrar i + " → Impar" // 1 → Impar, 3 → Impar, 5 → Impar
-    }
+si i.esPar() {
+mostrar i + " → Par" // 2 → Par, 4 → Par, 6 → Par
+} sino {
+mostrar i + " → Impar" // 1 → Impar, 3 → Impar, 5 → Impar
+}
 }`} />
 
 - .esPar(): Retorna verdadero si el número es divisible por 2
@@ -47,14 +47,14 @@ mostrar "Balance " + balance + " es cero: " + balance.esCero() // Balance 0 es c
 // Validar datos
 variable numeros = [10, -5, 0, 8, -3]
 para (variable i = 0; i < 5; i++) {
-    variable n = numeros[i]
-    si n.esPositivo() {
-        mostrar n + " → Ganancia" // 10 → Ganancia, 8 → Ganancia
-    } sino si n.esNegativo() {
-        mostrar n + " → Pérdida" // -5 → Pérdida, -3 → Pérdida
-    } sino {
-        mostrar n + " → Neutro" // 0 → Neutro
-    }
+variable n = numeros[i]
+si n.esPositivo() {
+mostrar n + " → Ganancia" // 10 → Ganancia, 8 → Ganancia
+} sino si n.esNegativo() {
+mostrar n + " → Pérdida" // -5 → Pérdida, -3 → Pérdida
+} sino {
+mostrar n + " → Neutro" // 0 → Neutro
+}
 }`} />
 
 - .esPositivo(): Verdadero si el número es mayor que 0
@@ -86,7 +86,7 @@ mostrar "Stock disponible: " + stock.aTexto() + " unidades" // Stock disponible:
 // En una lista
 variable precios = [100, 200, 300]
 para (variable i = 0; i < 3; i++) {
-    mostrar "Item " + (i + 1).aTexto() + ": $" + precios[i].aTexto() // Item 1: $100, Item 2: $200, Item 3: $300
+mostrar "Item " + (i + 1).aTexto() + ": $" + precios[i].aTexto() // Item 1: $100, Item 2: $200, Item 3: $300
 }`} />
 
 - .aTexto(): Convierte el número a su representación textual
@@ -112,12 +112,12 @@ mostrar exacto + " es entero: " + exacto.esEntero() // 100.0 es entero: verdader
 // Validar entrada
 variable valores = [10, 5.5, 3, 7.25, 8]
 para (variable i = 0; i < 5; i++) {
-    variable v = valores[i]
-    si v.esEntero() {
-        mostrar v + " → Cantidad válida" // 10 → Cantidad válida, 3 → Cantidad válida, 8 → Cantidad válida
-    } sino {
-        mostrar v + " → Redondear a " + redondear(v) // 5.5 → Redondear a 6, 7.25 → Redondear a 7
-    }
+variable v = valores[i]
+si v.esEntero() {
+mostrar v + " → Cantidad válida" // 10 → Cantidad válida, 3 → Cantidad válida, 8 → Cantidad válida
+} sino {
+mostrar v + " → Redondear a " + redondear(v) // 5.5 → Redondear a 6, 7.25 → Redondear a 7
+}
 }`} />
 
 - .esEntero(): Verdadero si no tiene parte decimal
@@ -187,18 +187,18 @@ Ejemplo completo usando métodos numéricos.
 <Code code={`mostrar "=== SISTEMA DE INVENTARIO ===" // === SISTEMA DE INVENTARIO ===
 
 variable productos = [
-    ["Laptop", 1500, 5],
-    ["Mouse", 50, 25],
-    ["Teclado", 150, 12],
-    ["Monitor", 800, 3]
+["Laptop", 1500, 5],
+["Mouse", 50, 25],
+["Teclado", 150, 12],
+["Monitor", 800, 3]
 ]
 
 variable totalInventario = 0
 
 para (variable i = 0; i < 4; i++) {
-    variable nombre = productos[i][0]
-    variable precio = productos[i][1]
-    variable stock = productos[i][2]
+variable nombre = productos[i][0]
+variable precio = productos[i][1]
+variable stock = productos[i][2]
 
     variable subtotal = precio * stock
     totalInventario = totalInventario + subtotal
@@ -212,6 +212,7 @@ para (variable i = 0; i < 4; i++) {
     si stock.esImpar() {
         mostrar "  (Stock impar - verificar)" // (Stock impar - verificar) para Laptop, Mouse, Monitor
     }
+
 }
 
 mostrar "" // (linea vacia)
@@ -219,6 +220,7 @@ mostrar "=== RESUMEN ===" // === RESUMEN ===
 mostrar "Valor total del inventario: $" + totalInventario.aTexto() // Valor total del inventario: $12950`} />
 
 Resumen de métodos numéricos:
+
 - .esPar() / .esImpar(): Verificar paridad
 - .esPositivo() / .esNegativo() / .esCero(): Verificar signo
 - .aTexto(): Convertir a texto

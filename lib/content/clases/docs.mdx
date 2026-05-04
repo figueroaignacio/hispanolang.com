@@ -22,6 +22,7 @@ Define clases usando la palabra 'clase' con un constructor y métodos.
         este.edad = este.edad + 1
         mostrar \`\${este.nombre} ahora tiene \${este.edad} años\`
     }
+
 }
 
 variable juan = nuevo Persona("Juan", 25)
@@ -46,6 +47,7 @@ Crea instancias de clases usando la palabra 'nuevo'.
     saludar() {
         retornar \`Hola, soy \${este.nombre}\`
     }
+
 }
 
 variable persona = nuevo Persona("Juan", 25)
@@ -101,6 +103,7 @@ Las clases pueden tener múltiples propiedades y métodos para encapsular compor
     verSaldo() {
         mostrar "Saldo de " + este.titular + ": $" + texto(este.saldo)
     }
+
 }
 
 variable cuenta = nuevo CuentaBancaria("María", 1000)
@@ -145,6 +148,7 @@ cuenta.verSaldo() // Saldo de María: $1300`} />
         mostrar "Precio: $" + texto(este.precio)
         mostrar "Stock: " + texto(este.stock)
     }
+
 }
 
 variable mouse = nuevo Producto("Mouse Gamer", 150, 10)
@@ -160,6 +164,7 @@ mouse.reabastecer(5) // Reabastecido: Mouse Gamer ahora tiene 12 unidades
 mouse.mostrarInfo() // ---, Producto: Mouse Gamer, Precio: $150, Stock: 12`} />
 
 Resumen de clases:
+
 - clase NombreClase { } - Define una clase
 - constructor() - Inicializa propiedades
 - este.propiedad - Accede a propiedades

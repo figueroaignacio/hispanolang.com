@@ -1,6 +1,6 @@
-import Code from "./Code";
-import Output from "./Output";
-import Syntax from "./Syntax";
+import Code from './Code';
+import Output from './Output';
+import Syntax from './Syntax';
 
 export const mdxComponents = {
   Code,

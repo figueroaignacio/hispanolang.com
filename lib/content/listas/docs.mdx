@@ -166,9 +166,9 @@ mostrar "¿Tengo queso?: " + texto(compras.contiene("queso")) // ¿Tengo queso?:
 mostrar "¿Tengo pan?: " + texto(compras.contiene("pan")) // ¿Tengo pan?: verdadero
 
 si compras.contiene("huevos") {
-    mostrar "Ya tienes huevos en la lista" // Ya tienes huevos en la lista
+mostrar "Ya tienes huevos en la lista" // Ya tienes huevos en la lista
 } sino {
-    mostrar "Necesitas agregar huevos"
+mostrar "Necesitas agregar huevos"
 }
 
 // Validar antes de agregar
@@ -176,10 +176,10 @@ variable carrito = ["Mouse", "Teclado"]
 
 variable nuevoItem = "Mouse"
 si carrito.contiene(nuevoItem) {
-    mostrar nuevoItem + " ya está en el carrito" // Mouse ya está en el carrito
+mostrar nuevoItem + " ya está en el carrito" // Mouse ya está en el carrito
 } sino {
-    carrito.agregar(nuevoItem)
-    mostrar "Agregado: " + nuevoItem
+carrito.agregar(nuevoItem)
+mostrar "Agregado: " + nuevoItem
 }`} />
 
 - .contiene(elemento): Verdadero si existe, falso si no
@@ -195,13 +195,13 @@ Como cuando pasas por cada línea de tu lista de compras en el super.
 
 mostrar "=== LISTA DE COMPRAS ===" // === LISTA DE COMPRAS ===
 compras.recorrer(funcion(item) {
-    mostrar "- " + item // - leche, - pan, - huevos, - manzanas (uno por línea)
+mostrar "- " + item // - leche, - pan, - huevos, - manzanas (uno por línea)
 })
 
 mostrar "" // (línea vacía)
 mostrar "=== CON ÍNDICE ===" // === CON ÍNDICE ===
 compras.recorrer(funcion(item, indice) {
-    mostrar "Item " + texto(indice) + ": " + item // Item 0: leche, Item 1: pan, Item 2: huevos, Item 3: manzanas
+mostrar "Item " + texto(indice) + ": " + item // Item 0: leche, Item 1: pan, Item 2: huevos, Item 3: manzanas
 })
 
 mostrar "" // (línea vacía)
@@ -210,8 +210,8 @@ variable precios = [100, 250, 150, 300]
 variable total = 0
 
 precios.recorrer(funcion(precio) {
-    total = total + precio
-    mostrar "Agregando $" + texto(precio) + " → Total: $" + texto(total) // Agregando $100 → Total: $100, etc.
+total = total + precio
+mostrar "Agregando $" + texto(precio) + " → Total: $" + texto(total) // Agregando $100 → Total: $100, etc.
 })
 
 mostrar "Total final: $" + texto(total) // Total final: $800`} />
@@ -229,14 +229,14 @@ Crear nuevas listas basadas en la original.
 
 // Filtrar: solo baratos
 variable baratos = precios.filtrar(funcion(precio) {
-    retornar precio < 200
+retornar precio < 200
 })
 mostrar "Todos: " + texto(precios) // Todos: [100, 250, 150, 300, 80, 200]
 mostrar "Baratos (< $200): " + texto(baratos) // Baratos (< $200): [100, 150, 80]
 
 // Mapear: aplicar IVA
 variable conIVA = precios.mapear(funcion(precio) {
-    retornar precio * 1.21
+retornar precio \* 1.21
 })
 mostrar "Con IVA: " + texto(conIVA) // Con IVA: [121, 302.5, 181.5, 363, 96.8, 242]
 
@@ -244,12 +244,12 @@ mostrar "Con IVA: " + texto(conIVA) // Con IVA: [121, 302.5, 181.5, 363, 96.8, 2
 variable numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 variable pares = numeros.filtrar(funcion(n) {
-    retornar n.esPar()
+retornar n.esPar()
 })
 mostrar "Pares: " + texto(pares) // Pares: [2, 4, 6, 8, 10]
 
 variable dobles = numeros.mapear(funcion(n) {
-    retornar n * 2
+retornar n \* 2
 })
 mostrar "Dobles: " + texto(dobles) // Dobles: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]`} />
 
@@ -265,7 +265,7 @@ mostrar "Dobles: " + texto(dobles) // Dobles: [2, 4, 6, 8, 10, 12, 14, 16, 18, 2
 <Code code={`variable precios = [100, 250, 150, 300]
 
 variable total = precios.reducir(funcion(acumulado, precio) {
-    retornar acumulado + precio
+retornar acumulado + precio
 }, 0)
 mostrar "Precios: " + texto(precios) // Precios: [100, 250, 150, 300]
 mostrar "Total: $" + texto(total) // Total: $800
@@ -274,12 +274,12 @@ mostrar "" // (línea vacía)
 variable numeros = [1, 2, 3, 4, 5]
 
 variable suma = numeros.reducir(funcion(acc, n) {
-    retornar acc + n
+retornar acc + n
 }, 0)
 mostrar "Suma: " + texto(suma) // Suma: 15
 
 variable producto = numeros.reducir(funcion(acc, n) {
-    retornar acc * n
+retornar acc \* n
 }, 1)
 mostrar "Producto: " + texto(producto) // Producto: 120`} />
 
@@ -289,6 +289,7 @@ mostrar "Producto: " + texto(producto) // Producto: 120`} />
 - Útil para totales, promedios, concatenación
 
 Resumen de métodos de listas:
+
 - .longitud(): Cantidad de elementos
 - .primero() / .ultimo(): Primer y último elemento
 - .agregar(elem): Agregar al final

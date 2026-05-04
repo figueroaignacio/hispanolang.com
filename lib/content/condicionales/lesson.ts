@@ -1,15 +1,15 @@
-import { LessonContent } from "@/lib/lessons/types";
+import { LessonContent } from '@/lib/lessons/types';
 
 export const lesson: LessonContent = {
-  badge: { emoji: "🤔", text: "Lección 8" },
-  title: "Condicionales en",
-  titleGradient: " HispanoLang",
-  description: "Aprende a tomar decisiones como un sistema de calificaciones",
-  prev: { url: "/lecciones/operadores", title: "Operadores" },
-  next: { url: "/lecciones/elegir-caso", title: "Elegir/Caso" },
+  badge: { emoji: '🤔', text: 'Lección 8' },
+  title: 'Condicionales en',
+  titleGradient: ' HispanoLang',
+  description: 'Aprende a tomar decisiones como un sistema de calificaciones',
+  prev: { url: '/lecciones/operadores', title: 'Operadores' },
+  next: { url: '/lecciones/elegir-caso', title: 'Elegir/Caso' },
   steps: [
     {
-      title: "Tu Primera Decisión: Aprobado o No",
+      title: 'Tu Primera Decisión: Aprobado o No',
       content:
         "En la escuela, si tu nota es mayor o igual a 70, apruebas. Si es menor, repruebas. Esto es un condicional: el programa toma una decisión basada en una condición.\n\nLa estructura 'si' ejecuta código solo cuando la condición es verdadera.",
       code: `variable nota = 75
@@ -24,16 +24,11 @@ mostrar "Fin del programa"`,
       challenge:
         "Crea una variable `asistencia` con un porcentaje. Si la asistencia es mayor o igual a 75, muestra 'Cumples con la asistencia mínima'.",
       validation: {
-        requiredCode: [
-          "/asistencia\\s*=/",
-          "/si\\s+/",
-          "/>=?\\s*75|>\\s*74/",
-          "/mostrar/",
-        ],
+        requiredCode: ['/asistencia\\s*=/', '/si\\s+/', '/>=?\\s*75|>\\s*74/', '/mostrar/'],
       },
     },
     {
-      title: "Dos Caminos: Aprobado o Reprobado",
+      title: 'Dos Caminos: Aprobado o Reprobado',
       content:
         "A veces necesitas hacer algo cuando la condición es verdadera Y algo diferente cuando es falsa.\n\nLa estructura 'si-sino' cubre ambos casos: aprobado o reprobado.",
       code: `variable nota = 65
@@ -48,18 +43,12 @@ si nota >= 70 {
       challenge:
         "Crea una variable `promedio` con una nota. Usa si-sino para mostrar 'Cuadro de Honor' si es mayor o igual a 85, sino muestra 'Buen trabajo'.",
       validation: {
-        requiredCode: [
-          "/promedio\\s*=/",
-          "/si\\s+/",
-          "/>=?\\s*85|>\\s*84/",
-          "/sino/",
-          "/mostrar/",
-        ],
-        expectedOutputs: ["/Cuadro|Buen/i"],
+        requiredCode: ['/promedio\\s*=/', '/si\\s+/', '/>=?\\s*85|>\\s*84/', '/sino/', '/mostrar/'],
+        expectedOutputs: ['/Cuadro|Buen/i'],
       },
     },
     {
-      title: "Múltiples Rangos: A, B, C o F",
+      title: 'Múltiples Rangos: A, B, C o F',
       content:
         "El sistema de calificaciones tiene múltiples rangos: A (90+), B (80-89), C (70-79), F (<70).\n\nPara esto usamos 'si-sino si': una cadena de condiciones que se evalúan en orden.",
       code: `variable nota = 85
@@ -79,17 +68,17 @@ si nota >= 90 {
         "Sistema de becas basado en promedio:\n• >= 95: 'Beca Completa'\n• >= 85: 'Beca Parcial'\n• >= 75: 'Ayuda Económica'\n• sino: 'Sin beca'\nCrea variable `promedio` y muestra el tipo de beca.",
       validation: {
         requiredCode: [
-          "/promedio\\s*=/",
-          "/si\\s+.*>=?\\s*95|>\\s*94/",
-          "/sino\\s+si\\s+.*>=?\\s*85|>\\s*84/",
-          "/sino\\s+si\\s+.*>=?\\s*75|>\\s*74/",
-          "/sino/",
+          '/promedio\\s*=/',
+          '/si\\s+.*>=?\\s*95|>\\s*94/',
+          '/sino\\s+si\\s+.*>=?\\s*85|>\\s*84/',
+          '/sino\\s+si\\s+.*>=?\\s*75|>\\s*74/',
+          '/sino/',
         ],
-        expectedOutputs: ["/Beca|Ayuda|Sin/i"],
+        expectedOutputs: ['/Beca|Ayuda|Sin/i'],
       },
     },
     {
-      title: "Decisiones Dentro de Decisiones",
+      title: 'Decisiones Dentro de Decisiones',
       content:
         "A veces una decisión lleva a otra decisión. Como: 'Si aprobaste, ENTONCES si tu nota es 90+, verificamos si mereces mención de honor'.\n\nEsto se llama condicionales anidados.",
       code: `variable nota = 92
@@ -113,18 +102,13 @@ si nota >= 70 {
       challenge:
         "Sistema de recuperación:\n• Si nota < 70 (reprobó)\n  • ENTONCES si nota >= 60: 'Puedes presentar examen de recuperación'\n  • SINO: 'Debes recursar la materia completa'\nCrea `nota` y usa condicionales anidados.",
       validation: {
-        requiredCode: [
-          "/nota\\s*=/",
-          "/si\\s+.*<\\s*70/",
-          "/si\\s+.*>=?\\s*60|>\\s*59/",
-          "/sino/",
-        ],
+        requiredCode: ['/nota\\s*=/', '/si\\s+.*<\\s*70/', '/si\\s+.*>=?\\s*60|>\\s*59/', '/sino/'],
       },
     },
     {
       title: "Condiciones Múltiples con 'y' y 'o'",
       content:
-        "Para aprobar una materia a veces necesitas cumplir MÚLTIPLES requisitos: nota >= 70 Y asistencia >= 75.\n\nUsamos operadores lógicos para combinar condiciones.",
+        'Para aprobar una materia a veces necesitas cumplir MÚLTIPLES requisitos: nota >= 70 Y asistencia >= 75.\n\nUsamos operadores lógicos para combinar condiciones.',
       code: `variable nota = 85
 variable asistencia = 80
 variable entregaTrabajos = verdadero
@@ -141,23 +125,23 @@ si nota >= 70 y asistencia >= 75 y entregaTrabajos {
     mostrar "*** APROBADO COMPLETO ***"
 }`,
       explanation:
-        "Operadores lógicos en condiciones:\n\n• **y**: Ambas condiciones deben ser verdaderas\n  `nota >= 70 y asistencia >= 75`\n  → Solo si AMBAS son verdaderas\n\n• **o**: Al menos una debe ser verdadera\n  `nota >= 90 o asistencia >= 95`\n  → Si una O la otra (o ambas)\n\n• **!**: Invierte verdadero ↔ falso\n  `!reprobado` → verdadero si NO está reprobado",
+        'Operadores lógicos en condiciones:\n\n• **y**: Ambas condiciones deben ser verdaderas\n  `nota >= 70 y asistencia >= 75`\n  → Solo si AMBAS son verdaderas\n\n• **o**: Al menos una debe ser verdadera\n  `nota >= 90 o asistencia >= 95`\n  → Si una O la otra (o ambas)\n\n• **!**: Invierte verdadero ↔ falso\n  `!reprobado` → verdadero si NO está reprobado',
       challenge:
         "Sistema completo de aprobación:\n• Variables: `notaFinal`, `asistencia`, `trabajosEntregados` (booleano)\n• Aprueba si: (notaFinal >= 70 Y asistencia >= 75) Y trabajosEntregados\n• Muestra 'APROBADO' o 'REPROBADO' según corresponda.",
       validation: {
         requiredCode: [
-          "/notaFinal\\s*=/",
-          "/asistencia\\s*=/",
-          "/trabajosEntregados\\s*=/",
-          "/\\s+y\\s+/",
-          "/si\\s+/",
-          "/sino/",
+          '/notaFinal\\s*=/',
+          '/asistencia\\s*=/',
+          '/trabajosEntregados\\s*=/',
+          '/\\s+y\\s+/',
+          '/si\\s+/',
+          '/sino/',
         ],
-        expectedOutputs: ["/APROBADO|REPROBADO/"],
+        expectedOutputs: ['/APROBADO|REPROBADO/'],
       },
     },
     {
-      title: "Evitando Anidamiento Excesivo",
+      title: 'Evitando Anidamiento Excesivo',
       content:
         "A veces en vez de anidar muchos 'si', es mejor usar operadores lógicos o reorganizar el código.\n\nComparemos dos formas de hacer lo mismo.",
       code: `variable nota = 88
@@ -181,18 +165,18 @@ si nota >= 70 y asistencia >= 75 y participacion >= 80 {
         "Elegibilidad para cuadro de honor:\n• Requiere: promedio >= 85 Y asistencia >= 90 Y comportamiento == 'Excelente'\n• Crea las variables y usa UNA SOLA condición con 'y' (no anides)\n• Muestra 'Cuadro de Honor' o 'No elegible'.",
       validation: {
         requiredCode: [
-          "/promedio\\s*=/",
-          "/asistencia\\s*=/",
-          "/comportamiento\\s*=/",
-          "/\\s+y\\s+.*y\\s+/",
-          "/si\\s+/",
+          '/promedio\\s*=/',
+          '/asistencia\\s*=/',
+          '/comportamiento\\s*=/',
+          '/\\s+y\\s+.*y\\s+/',
+          '/si\\s+/',
         ],
       },
     },
     {
-      title: "Sistema Completo de Calificaciones",
+      title: 'Sistema Completo de Calificaciones',
       content:
-        "Ahora combina todo lo aprendido para crear un sistema completo de calificaciones con múltiples verificaciones.",
+        'Ahora combina todo lo aprendido para crear un sistema completo de calificaciones con múltiples verificaciones.',
       code: `variable notaExamen = 85
 variable notaTrabajos = 90
 variable asistencia = 88
@@ -230,21 +214,21 @@ si notaFinal >= 70 y asistencia >= 75 {
     }
 }`,
       explanation:
-        "Este sistema completo incluye:\n\n1. Cálculo de promedio\n2. Verificación de aprobación (nota Y asistencia)\n3. Asignación de letra (A, B, C)\n4. Verificación de honores (anidado)\n5. Opciones de recuperación\n6. Mensajes personalizados\n\nAsí funcionan los sistemas académicos reales.",
+        'Este sistema completo incluye:\n\n1. Cálculo de promedio\n2. Verificación de aprobación (nota Y asistencia)\n3. Asignación de letra (A, B, C)\n4. Verificación de honores (anidado)\n5. Opciones de recuperación\n6. Mensajes personalizados\n\nAsí funcionan los sistemas académicos reales.',
       challenge:
         "Crea tu propio reporte de calificaciones:\n• Variables: `notaParcial1`, `notaParcial2`, `notaFinal`, `asistencia`\n• Calcula promedio de los 3 exámenes\n• Si (promedio >= 70 Y asistencia >= 75): 'APROBADO'\n• Si aprobó Y promedio >= 85: 'Cuadro de Honor'\n• Si reprobó Y promedio >= 60: 'Recuperación disponible'\n• Sino: 'Debe recursar'\nMuestra todo el reporte.",
       summary:
         "🎉 ¡Felicitaciones! Ahora dominas los condicionales:\n\n**Estructuras:**\n• **si**: Ejecuta código solo si condición es verdadera\n• **si-sino**: Dos caminos (uno u otro)\n• **si-sino si**: Múltiples opciones (rangos)\n• **anidados**: Decisiones dentro de decisiones\n\n**Operadores:**\n• **y**: Ambas condiciones verdaderas\n• **o**: Al menos una verdadera\n• **!**: Invierte verdadero/falso\n\n**Tips:**\n✅ Usa 'y'/'o' en vez de anidar cuando sea posible\n✅ Ordena condiciones de mayor a menor en rangos\n✅ El orden importa en si-sino si\n✅ Mantén buena indentación\n\n💡 ¡Siguiente: aprende la estructura 'elegir' para múltiples opciones!",
       validation: {
         requiredCode: [
-          "/notaParcial1\\s*=/",
-          "/notaParcial2\\s*=/",
-          "/notaFinal\\s*=/",
-          "/asistencia\\s*=/",
-          "/promedio/",
-          "/si\\s+/",
-          "/\\s+y\\s+/",
-          "/sino/",
+          '/notaParcial1\\s*=/',
+          '/notaParcial2\\s*=/',
+          '/notaFinal\\s*=/',
+          '/asistencia\\s*=/',
+          '/promedio/',
+          '/si\\s+/',
+          '/\\s+y\\s+/',
+          '/sino/',
         ],
       },
     },

@@ -39,12 +39,7 @@ export default function LessonsSidebar({ isOpen, onClose }: LessonsSidebarProps)
             onClick={onClose}
             className="p-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -70,9 +65,11 @@ export default function LessonsSidebar({ isOpen, onClose }: LessonsSidebarProps)
                     : 'hover:bg-slate-800/70 border border-transparent'
                 }`}
               >
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg ${
-                  isActive ? 'bg-purple-500/30' : 'bg-slate-800'
-                }`}>
+                <div
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg ${
+                    isActive ? 'bg-purple-500/30' : 'bg-slate-800'
+                  }`}
+                >
                   {lesson.emoji}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -80,19 +77,17 @@ export default function LessonsSidebar({ isOpen, onClose }: LessonsSidebarProps)
                     <span className={`text-xs ${isActive ? 'text-purple-400' : 'text-slate-500'}`}>
                       {index + 1}.
                     </span>
-                    <span className={`text-sm font-medium truncate ${
-                      isActive ? 'text-purple-300' : 'text-slate-300'
-                    }`}>
+                    <span
+                      className={`text-sm font-medium truncate ${
+                        isActive ? 'text-purple-300' : 'text-slate-300'
+                      }`}
+                    >
                       {lesson.title}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-500 truncate mt-0.5">
-                    {lesson.description}
-                  </p>
+                  <p className="text-xs text-slate-500 truncate mt-0.5">{lesson.description}</p>
                 </div>
-                {isActive && (
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400"></div>
-                )}
+                {isActive && <div className="w-1.5 h-1.5 rounded-full bg-purple-400"></div>}
               </Link>
             );
           })}
@@ -106,7 +101,12 @@ export default function LessonsSidebar({ isOpen, onClose }: LessonsSidebarProps)
             className="flex items-center justify-center gap-2 w-full py-2.5 text-sm text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-lg transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 10h16M4 14h16M4 18h16"
+              />
             </svg>
             Ver todas las lecciones
           </Link>

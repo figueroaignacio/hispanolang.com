@@ -1,6 +1,6 @@
-import Card from "@/components/ui/Card";
-import CopyButton from "@/components/ui/CopyButton";
-import { SyntaxHighlighter } from "@/components/code";
+import Card from '@/components/ui/Card';
+import CopyButton from '@/components/ui/CopyButton';
+import { SyntaxHighlighter } from '@/components/code';
 
 interface CodeBlockProps {
   code: string;

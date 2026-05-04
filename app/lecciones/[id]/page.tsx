@@ -1,6 +1,6 @@
-import { notFound } from "next/navigation";
-import { getLessonContent, getAllLessonIds } from "@/lib/content";
-import LessonPage from "@/components/lessons/LessonPage";
+import { notFound } from 'next/navigation';
+import { getLessonContent, getAllLessonIds } from '@/lib/content';
+import LessonPage from '@/components/lessons/LessonPage';
 
 export function generateStaticParams() {
   return getAllLessonIds().map((id) => ({ id }));

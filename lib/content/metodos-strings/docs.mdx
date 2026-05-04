@@ -11,13 +11,13 @@ Como el contador de palabras y caracteres que aparece abajo a la izquierda en Wo
 <Code code={`variable titulo = "Mi Documento Importante"
 variable parrafo = "Este es un párrafo de ejemplo para contar caracteres."
 
-mostrar "El título tiene " + titulo.longitud() + " caracteres"  // El título tiene 23 caracteres
-mostrar "El párrafo tiene " + parrafo.longitud() + " caracteres"  // El párrafo tiene 54 caracteres
+mostrar "El título tiene " + titulo.longitud() + " caracteres" // El título tiene 23 caracteres
+mostrar "El párrafo tiene " + parrafo.longitud() + " caracteres" // El párrafo tiene 54 caracteres
 
 variable tweet = "Hola mundo"
 variable limite = 280
 variable restantes = limite - tweet.longitud()
-mostrar "Te quedan " + restantes + " caracteres"  // Te quedan 270 caracteres`} />
+mostrar "Te quedan " + restantes + " caracteres" // Te quedan 270 caracteres`} />
 
 - .longitud() retorna la cantidad de caracteres del texto
 - Los espacios cuentan como caracteres
@@ -32,13 +32,13 @@ Como el botón 'Aa' en Word que cambia el texto a mayúsculas o minúsculas. Muy
 variable grito = "no me gusta esto"
 variable email = "USUARIO@EMAIL.COM"
 
-mostrar titulo.mayusculas()  // MI DOCUMENTO IMPORTANTE
-mostrar grito.mayusculas()  // NO ME GUSTA ESTO
-mostrar email.minusculas()  // usuario@email.com
+mostrar titulo.mayusculas() // MI DOCUMENTO IMPORTANTE
+mostrar grito.mayusculas() // NO ME GUSTA ESTO
+mostrar email.minusculas() // usuario@email.com
 
 variable nombre = "JUAN PÉREZ"
 variable nombreNormalizado = nombre.minusculas()
-mostrar "Hola, " + nombreNormalizado  // Hola, juan pérez`} />
+mostrar "Hola, " + nombreNormalizado // Hola, juan pérez`} />
 
 - .mayusculas() convierte todo el texto a MAYÚSCULAS
 - .minusculas() convierte todo el texto a minúsculas
@@ -53,11 +53,11 @@ Cuando copias texto de internet y pegas en Word, a veces trae espacios extra al 
 variable emailPegado = "  juan@email.com  "
 variable nombreConEspacios = "    María    "
 
-mostrar "Con espacios: '" + textoCopiado + "'"  // Con espacios: '   Hola mundo   '
-mostrar "Sin espacios: '" + textoCopiado.recortar() + "'"  // Sin espacios: 'Hola mundo'
+mostrar "Con espacios: '" + textoCopiado + "'" // Con espacios: ' Hola mundo '
+mostrar "Sin espacios: '" + textoCopiado.recortar() + "'" // Sin espacios: 'Hola mundo'
 
-mostrar emailPegado.recortar()  // juan@email.com
-mostrar nombreConEspacios.recortar()  // María`} />
+mostrar emailPegado.recortar() // juan@email.com
+mostrar nombreConEspacios.recortar() // María`} />
 
 - .recortar() elimina espacios al inicio y al final del texto
 - NO elimina espacios del medio, solo de los bordes
@@ -72,15 +72,15 @@ Como usar Ctrl+F en Word para buscar una palabra. Puedes verificar si un texto c
 variable email = "usuario@gmail.com"
 variable archivo = "reporte_final.pdf"
 
-mostrar documento.incluye("Programación")  // verdadero
-mostrar documento.incluye("Python")  // falso
+mostrar documento.incluye("Programación") // verdadero
+mostrar documento.incluye("Python") // falso
 
-mostrar email.incluye("@")  // verdadero
-mostrar email.terminaCon(".com")  // verdadero
-mostrar email.empiezaCon("usuario")  // verdadero
+mostrar email.incluye("@") // verdadero
+mostrar email.terminaCon(".com") // verdadero
+mostrar email.empiezaCon("usuario") // verdadero
 
-mostrar archivo.terminaCon(".pdf")  // verdadero
-mostrar archivo.terminaCon(".docx")  // falso`} />
+mostrar archivo.terminaCon(".pdf") // verdadero
+mostrar archivo.terminaCon(".docx") // falso`} />
 
 - .incluye(texto) verifica si contiene ese texto → retorna verdadero o falso
 - .empiezaCon(texto) verifica si comienza con ese texto
@@ -96,14 +96,14 @@ Como la función Ctrl+H 'Buscar y Reemplazar' en Word. Encuentra todas las veces
 variable correccion = "El perro es un aninal muy leal"
 variable telefono = "123-456-7890"
 
-mostrar documento.reemplazar("mundo", "universo")  // Hola universo, universo feliz
+mostrar documento.reemplazar("mundo", "universo") // Hola universo, universo feliz
 
-mostrar correccion.reemplazar("aninal", "animal")  // El perro es un animal muy leal
+mostrar correccion.reemplazar("aninal", "animal") // El perro es un animal muy leal
 
-mostrar telefono.reemplazar("-", "")  // 1234567890
+mostrar telefono.reemplazar("-", "") // 1234567890
 
 variable texto = "Me gusta Python. Python es genial."
-mostrar texto.reemplazar("Python", "HispanoLang")  // Me gusta HispanoLang. HispanoLang es genial.`} />
+mostrar texto.reemplazar("Python", "HispanoLang") // Me gusta HispanoLang. HispanoLang es genial.`} />
 
 - .reemplazar(buscar, reemplazo) cambia TODAS las apariciones
 - Si la palabra aparece 5 veces, las cambia las 5 veces
@@ -119,13 +119,13 @@ Como cuando en Word usas varias herramientas seguidas: primero quitas espacios, 
 variable emailLimpio = emailSucio.recortar().minusculas()
 mostrar emailLimpio  // usuario@email.com
 
-variable titulo = "   MI DOCUMENTO IMPORTANTE   "
+variable titulo = " MI DOCUMENTO IMPORTANTE "
 variable tituloFormateado = titulo.recortar().minusculas()
-mostrar tituloFormateado  // mi documento importante
+mostrar tituloFormateado // mi documento importante
 
-variable texto = "  Hola MUNDO  "
+variable texto = " Hola MUNDO "
 variable procesado = texto.recortar().mayusculas().reemplazar("MUNDO", "AMIGO")
-mostrar procesado  // HOLA AMIGO`} />
+mostrar procesado // HOLA AMIGO`} />
 
 - Puedes usar varios métodos seguidos, uno tras otro
 - Se ejecutan de izquierda a derecha, en orden
@@ -143,16 +143,16 @@ mostrar "Usuario: " + usuarioLimpio  // Usuario: maria_dev
 
 variable emailFormulario = "Juan@Email.COM"
 variable emailNormalizado = emailFormulario.minusculas()
-mostrar "Email guardado: " + emailNormalizado  // Email guardado: juan@email.com
+mostrar "Email guardado: " + emailNormalizado // Email guardado: juan@email.com
 
 variable busqueda = "Cómo hacer pizza casera"
-mostrar "Buscando: " + busqueda  // Buscando: Cómo hacer pizza casera
-mostrar "Longitud: " + busqueda.longitud() + " caracteres"  // Longitud: 25 caracteres
+mostrar "Buscando: " + busqueda // Buscando: Cómo hacer pizza casera
+mostrar "Longitud: " + busqueda.longitud() + " caracteres" // Longitud: 25 caracteres
 
-variable textoImportado = "   Este texto tiene espacios extra   "
+variable textoImportado = " Este texto tiene espacios extra "
 variable textoCorregido = textoImportado.recortar()
-mostrar "Antes: '" + textoImportado + "'"  // Antes: '   Este texto tiene espacios extra   '
-mostrar "Después: '" + textoCorregido + "'"  // Después: 'Este texto tiene espacios extra'`} />
+mostrar "Antes: '" + textoImportado + "'" // Antes: ' Este texto tiene espacios extra '
+mostrar "Después: '" + textoCorregido + "'" // Después: 'Este texto tiene espacios extra'`} />
 
 - Limpia datos antes de guardarlos: quita espacios, normaliza mayúsculas
 - Valida formatos: emails deben tener @, archivos deben terminar en extensión

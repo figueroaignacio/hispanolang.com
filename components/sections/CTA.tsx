@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Button from "@/components/ui/Button";
-import InfoBlock from "@/components/ui/InfoBlock";
-import Section from "@/components/ui/Section";
+import Link from 'next/link';
+import Button from '@/components/ui/Button';
+import InfoBlock from '@/components/ui/InfoBlock';
+import Section from '@/components/ui/Section';
 
 export default function CTA() {
   return (
@@ -34,11 +34,7 @@ export default function CTA() {
             </Button>
           </Link>
           <Link href="/documentacion">
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full shadow-lg"
-            >
+            <Button size="lg" variant="outline" className="rounded-full shadow-lg">
               Ver documentación
             </Button>
           </Link>

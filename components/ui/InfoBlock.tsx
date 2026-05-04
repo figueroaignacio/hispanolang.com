@@ -5,12 +5,7 @@ interface InfoBlockProps {
   className?: string;
 }
 
-export default function InfoBlock({
-  emoji,
-  title,
-  description,
-  className = "",
-}: InfoBlockProps) {
+export default function InfoBlock({ emoji, title, description, className = '' }: InfoBlockProps) {
   return (
     <div
       className={`rounded-2xl p-8 max-w-2xl mx-auto bg-gradient-to-br from-slate-800/90 via-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-700/50 shadow-xl ${className}`}

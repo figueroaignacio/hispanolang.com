@@ -1,73 +1,69 @@
-import Hero from "@/components/sections/Hero";
-import Features from "@/components/sections/Features";
-import Playground from "@/components/sections/Playground";
-import CTA from "@/components/sections/CTA";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Hero from '@/components/sections/Hero';
+import Features from '@/components/sections/Features';
+import Playground from '@/components/sections/Playground';
+import CTA from '@/components/sections/CTA';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "HispanoLang",
-    description:
-      "Lenguaje de programación moderno diseñado para estudiantes de habla hispana",
-    url: "https://hispanolang.com",
-    inLanguage: "es",
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'HispanoLang',
+    description: 'Lenguaje de programación moderno diseñado para estudiantes de habla hispana',
+    url: 'https://hispanolang.com',
+    inLanguage: 'es',
     author: {
-      "@type": "Organization",
-      name: "HispanoLang Team",
+      '@type': 'Organization',
+      name: 'HispanoLang Team',
     },
     publisher: {
-      "@type": "Organization",
-      name: "HispanoLang",
+      '@type': 'Organization',
+      name: 'HispanoLang',
       logo: {
-        "@type": "ImageObject",
-        url: "https://hispanolang.com/hl-og.png",
+        '@type': 'ImageObject',
+        url: 'https://hispanolang.com/hl-og.png',
       },
     },
     potentialAction: {
-      "@type": "SearchAction",
-      target:
-        "https://hispanolang.com/documentacion?seccion={search_term_string}",
-      "query-input": "required name=search_term_string",
+      '@type': 'SearchAction',
+      target: 'https://hispanolang.com/documentacion?seccion={search_term_string}',
+      'query-input': 'required name=search_term_string',
     },
   };
 
   const softwareJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "HispanoLang",
-    applicationCategory: "DeveloperApplication",
-    operatingSystem: "Windows, macOS, Linux",
-    description:
-      "Lenguaje de programación en español con sintaxis clara y moderna",
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'HispanoLang',
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Windows, macOS, Linux',
+    description: 'Lenguaje de programación en español con sintaxis clara y moderna',
     offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
     },
     aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      ratingCount: "100",
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      ratingCount: '100',
     },
   };
 
   const educationalJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    name: "Aprende HispanoLang",
-    description:
-      "Curso completo para aprender programación en español con HispanoLang",
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Aprende HispanoLang',
+    description: 'Curso completo para aprender programación en español con HispanoLang',
     provider: {
-      "@type": "Person",
-      name: "Nicolas Vazquez",
-      sameAs: "https://github.com/nicvazquezdev",
+      '@type': 'Person',
+      name: 'Nicolas Vazquez',
+      sameAs: 'https://github.com/nicvazquezdev',
     },
-    inLanguage: "es",
-    coursePrerequisites: "Ninguno",
-    educationalLevel: "Principiante a Avanzado",
+    inLanguage: 'es',
+    coursePrerequisites: 'Ninguno',
+    educationalLevel: 'Principiante a Avanzado',
   };
 
   return (
@@ -99,7 +95,7 @@ export default function Home() {
             className="absolute inset-0"
             style={{
               backgroundImage: `radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.3) 1px, transparent 0)`,
-              backgroundSize: "20px 20px",
+              backgroundSize: '20px 20px',
             }}
           ></div>
         </div>

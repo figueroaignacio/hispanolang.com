@@ -13,9 +13,9 @@ variable email = "maria@gmail.com"
 variable ciudad = "Buenos Aires"
 variable mensaje = "Hola, ¿cómo estás?"
 
-mostrar nombreUsuario  // maria_dev
-mostrar email  // maria@gmail.com
-mostrar ciudad  // Buenos Aires`} />
+mostrar nombreUsuario // maria_dev
+mostrar email // maria@gmail.com
+mostrar ciudad // Buenos Aires`} />
 
 - El texto SIEMPRE va entre comillas: "así" o 'así'
 - Puedes usar comillas dobles " " o simples ' ', pero sé consistente
@@ -31,16 +31,16 @@ Puedes unir varios pedazos de texto usando el símbolo +. Es como armar una orac
 variable apellido = "González"
 
 variable nombreCompleto = nombre + " " + apellido
-mostrar nombreCompleto  // María González
+mostrar nombreCompleto // María González
 
 variable edad = 28
 variable presentacion = "Hola, soy " + nombre + " y tengo " + edad + " años"
-mostrar presentacion  // Hola, soy María y tengo 28 años
+mostrar presentacion // Hola, soy María y tengo 28 años
 
 variable calle = "Av. Corrientes"
 variable numero = 1234
 variable direccion = calle + " " + numero
-mostrar direccion  // Av. Corrientes 1234`} />
+mostrar direccion // Av. Corrientes 1234`} />
 
 - Usa el símbolo + para unir texto
 - No olvides los espacios: nombre + apellido da "MaríaGonzález" (sin espacio)
@@ -60,22 +60,22 @@ variable precio = 999
 variable temperatura = -5
 variable precioConDecimales = 99.50
 
-mostrar edad  // 28
-mostrar precio  // 999
-mostrar precioConDecimales  // 99.5
+mostrar edad // 28
+mostrar precio // 999
+mostrar precioConDecimales // 99.5
 
 variable suma = 10 + 5
 variable resta = 20 - 8
-variable multiplicacion = 4 * 3
+variable multiplicacion = 4 \* 3
 variable division = 100 / 2
 
-mostrar suma  // 15
-mostrar division  // 50`} />
+mostrar suma // 15
+mostrar division // 50`} />
 
 - Los números NO llevan comillas: edad = 25 (no edad = "25")
 - Pueden ser positivos o negativos: 10, -5
 - Para decimales usa punto (.), no coma: 99.50 (no 99,50)
-- Puedes hacer operaciones: +, -, *, /
+- Puedes hacer operaciones: +, -, \*, /
 - Mezclar enteros y decimales funciona: 10 + 5.5 = 15.5
 
 ## Booleanos (Verdadero o Falso)
@@ -89,9 +89,9 @@ variable recibirOfertas = falso
 variable esMayorDeEdad = verdadero
 variable cuentaVerificada = falso
 
-mostrar aceptoTerminos  // verdadero
-mostrar recibirOfertas  // falso
-mostrar esMayorDeEdad  // verdadero`} />
+mostrar aceptoTerminos // verdadero
+mostrar recibirOfertas // falso
+mostrar esMayorDeEdad // verdadero`} />
 
 - Solo hay dos valores: verdadero o falso
 - NO llevan comillas: verdadero (no "verdadero")
@@ -108,10 +108,10 @@ variable email = "juan@email.com"
 variable telefonoOpcional = nulo
 variable apellidoMaterno = nulo
 
-mostrar nombreUsuario  // juan_perez
-mostrar email  // juan@email.com
-mostrar telefonoOpcional  // nulo
-mostrar apellidoMaterno  // nulo
+mostrar nombreUsuario // juan_perez
+mostrar email // juan@email.com
+mostrar telefonoOpcional // nulo
+mostrar apellidoMaterno // nulo
 
 variable edad = 30
 variable direccionNoIngresada = indefinido`} />
@@ -136,10 +136,10 @@ variable recibirNotificaciones = falso
 variable telefonoSecundario = nulo
 variable apodo = nulo
 
-mostrar "Nombre: " + nombre + " " + apellido  // Nombre: Ana García
-mostrar "Edad: " + edad  // Edad: 25
-mostrar "Saldo: $" + saldoCuenta  // Saldo: $1500.75
-mostrar "Acepto términos: " + aceptoTerminos  // Acepto términos: verdadero`} />
+mostrar "Nombre: " + nombre + " " + apellido // Nombre: Ana García
+mostrar "Edad: " + edad // Edad: 25
+mostrar "Saldo: $" + saldoCuenta // Saldo: $1500.75
+mostrar "Acepto términos: " + aceptoTerminos // Acepto términos: verdadero`} />
 
 - Texto: nombres, emails, direcciones, mensajes → entre comillas
 - Número: edad, precio, cantidad, teléfono → sin comillas
@@ -155,13 +155,13 @@ Errores típicos al elegir tipos de datos y cómo evitarlos.
 variable edadIncorrecta = "25"
 
 variable precioTotal = 100 + 50
-mostrar precioTotal  // 150
+mostrar precioTotal // 150
 
 variable precioTexto = "100" + "50"
-mostrar precioTexto  // 10050
+mostrar precioTexto // 10050
 
 variable mensaje = "Tengo " + 25 + " años"
-mostrar mensaje  // Tengo 25 años`} />
+mostrar mensaje // Tengo 25 años`} />
 
 - No pongas números entre comillas si vas a hacer cálculos: "25" es texto, 25 es número
 - "100" + "50" da "10050" (une texto), no 150

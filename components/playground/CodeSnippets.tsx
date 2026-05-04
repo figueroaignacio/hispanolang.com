@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   FiCode,
   FiPackage,
@@ -14,7 +14,7 @@ import {
   FiTrendingUp,
   FiDivide,
   FiSearch,
-} from "react-icons/fi";
+} from 'react-icons/fi';
 
 interface Snippet {
   id: string;
@@ -33,19 +33,19 @@ interface CodeSnippetsProps {
 
 const snippets: Snippet[] = [
   {
-    id: "hello-world",
-    title: "Hola Mundo",
-    description: "Tu primer programa",
+    id: 'hello-world',
+    title: 'Hola Mundo',
+    description: 'Tu primer programa',
     icon: FiCode,
     code: `// Mi primer programa
 variable lenguaje = "HispanoLang"
 mostrar "¡Hola " + lenguaje + "!"`,
-    category: "Básico",
+    category: 'Básico',
   },
   {
-    id: "variables",
-    title: "Variables",
-    description: "Declarar y usar variables",
+    id: 'variables',
+    title: 'Variables',
+    description: 'Declarar y usar variables',
     icon: FiPackage,
     code: `// Trabajando con variables
 variable nombre = "Ana"
@@ -55,12 +55,12 @@ variable ciudad = "Madrid"
 mostrar "Nombre: " + nombre
 mostrar "Edad: " + edad
 mostrar "Ciudad: " + ciudad`,
-    category: "Básico",
+    category: 'Básico',
   },
   {
-    id: "calculator",
-    title: "Calculadora",
-    description: "Operaciones matemáticas",
+    id: 'calculator',
+    title: 'Calculadora',
+    description: 'Operaciones matemáticas',
     icon: FiCalendar,
     code: `// Calculadora simple
 variable a = 15
@@ -71,12 +71,12 @@ mostrar "Resta: " + (a - b)
 mostrar "Multiplicación: " + (a * b)
 mostrar "División: " + (a / b)
 mostrar "Módulo: " + (a % b)`,
-    category: "Básico",
+    category: 'Básico',
   },
   {
-    id: "conditionals",
-    title: "Condicionales",
-    description: "Tomar decisiones",
+    id: 'conditionals',
+    title: 'Condicionales',
+    description: 'Tomar decisiones',
     icon: FiCheckCircle,
     code: `// Condicionales
 variable edad = 20
@@ -87,12 +87,12 @@ si edad >= 18 {
 } sino {
     mostrar nombre + " es menor de edad"
 }`,
-    category: "Control",
+    category: 'Control',
   },
   {
-    id: "loops",
-    title: "Bucles",
-    description: "Repetir acciones",
+    id: 'loops',
+    title: 'Bucles',
+    description: 'Repetir acciones',
     icon: FiRepeat,
     code: `// Bucle mientras
 variable contador = 1
@@ -103,12 +103,12 @@ mientras contador <= 5 {
 }
 
 mostrar "¡Bucle terminado!"`,
-    category: "Control",
+    category: 'Control',
   },
   {
-    id: "functions",
-    title: "Funciones",
-    description: "Código reutilizable",
+    id: 'functions',
+    title: 'Funciones',
+    description: 'Código reutilizable',
     icon: FiZap,
     code: `// Función simple
 funcion saludar(nombre) {
@@ -118,12 +118,12 @@ funcion saludar(nombre) {
 saludar("María")
 saludar("José")
 saludar("Pedro")`,
-    category: "Funciones",
+    category: 'Funciones',
   },
   {
-    id: "function-return",
-    title: "Función con Retorno",
-    description: "Funciones que devuelven valores",
+    id: 'function-return',
+    title: 'Función con Retorno',
+    description: 'Funciones que devuelven valores',
     icon: FiCornerDownLeft,
     code: `// Función con retorno
 funcion sumar(a, b) {
@@ -135,12 +135,12 @@ mostrar "10 + 20 = " + resultado
 
 variable total = sumar(5, 15)
 mostrar "5 + 15 = " + total`,
-    category: "Funciones",
+    category: 'Funciones',
   },
   {
-    id: "lists",
-    title: "Listas",
-    description: "Colecciones de datos",
+    id: 'lists',
+    title: 'Listas',
+    description: 'Colecciones de datos',
     icon: FiList,
     code: `// Trabajando con listas
 variable frutas = ["manzana", "naranja", "plátano"]
@@ -150,12 +150,12 @@ mostrar "Segunda fruta: " + frutas[1]
 mostrar "Tercera fruta: " + frutas[2]
 
 mostrar "Total de frutas: " + frutas.longitud()`,
-    category: "Estructuras",
+    category: 'Estructuras',
   },
   {
-    id: "objects",
-    title: "Objetos",
-    description: "Estructuras de datos",
+    id: 'objects',
+    title: 'Objetos',
+    description: 'Estructuras de datos',
     icon: FiTarget,
     code: `// Trabajando con objetos
 variable persona = {
@@ -167,12 +167,12 @@ variable persona = {
 mostrar "Nombre: " + persona.nombre
 mostrar "Edad: " + persona.edad
 mostrar "Profesión: " + persona.profesion`,
-    category: "Estructuras",
+    category: 'Estructuras',
   },
   {
-    id: "fibonacci",
-    title: "Fibonacci",
-    description: "Secuencia de Fibonacci",
+    id: 'fibonacci',
+    title: 'Fibonacci',
+    description: 'Secuencia de Fibonacci',
     icon: FiTrendingUp,
     code: `// Secuencia de Fibonacci
 funcion fibonacci(n) {
@@ -187,12 +187,12 @@ mientras i < 10 {
     mostrar "Fibonacci(" + i + ") = " + fibonacci(i)
     i = i + 1
 }`,
-    category: "Avanzado",
+    category: 'Avanzado',
   },
   {
-    id: "factorial",
-    title: "Factorial",
-    description: "Cálculo factorial",
+    id: 'factorial',
+    title: 'Factorial',
+    description: 'Cálculo factorial',
     icon: FiDivide,
     code: `// Factorial recursivo
 funcion factorial(n) {
@@ -205,12 +205,12 @@ funcion factorial(n) {
 variable num = 5
 variable resultado = factorial(num)
 mostrar "Factorial de " + num + " = " + resultado`,
-    category: "Avanzado",
+    category: 'Avanzado',
   },
   {
-    id: "prime-numbers",
-    title: "Números Primos",
-    description: "Detectar números primos",
+    id: 'prime-numbers',
+    title: 'Números Primos',
+    description: 'Detectar números primos',
     icon: FiSearch,
     code: `// Verificar si un número es primo
 funcion esPrimo(n) {
@@ -233,7 +233,7 @@ si esPrimo(num) {
 } sino {
     mostrar num + " no es primo"
 }`,
-    category: "Avanzado",
+    category: 'Avanzado',
   },
 ];
 
@@ -244,11 +244,9 @@ export default function CodeSnippets({
   onCollapse,
   showCollapseButton = false,
 }: CodeSnippetsProps) {
-  const [selectedCategory, setSelectedCategory] = useState<string>("Básico");
+  const [selectedCategory, setSelectedCategory] = useState<string>('Básico');
 
-  const filteredSnippets = snippets.filter(
-    (snippet) => snippet.category === selectedCategory,
-  );
+  const filteredSnippets = snippets.filter((snippet) => snippet.category === selectedCategory);
 
   return (
     <div className="bg-slate-900 border border-slate-700 rounded-lg h-full flex flex-col overflow-hidden">
@@ -287,8 +285,8 @@ export default function CodeSnippets({
               onClick={() => setSelectedCategory(category)}
               className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors ${
                 selectedCategory === category
-                  ? "bg-purple-600 text-white"
-                  : "bg-slate-700 text-slate-300 hover:bg-slate-600"
+                  ? 'bg-purple-600 text-white'
+                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
               }`}
             >
               {category}
@@ -300,9 +298,7 @@ export default function CodeSnippets({
       {/* Snippets list */}
       <div className="flex-1 overflow-y-auto p-3 space-y-2">
         {filteredSnippets.length === 0 ? (
-          <div className="text-center text-slate-400 text-sm py-8">
-            No se encontraron ejemplos
-          </div>
+          <div className="text-center text-slate-400 text-sm py-8">No se encontraron ejemplos</div>
         ) : (
           filteredSnippets.map((snippet) => {
             const Icon = snippet.icon;
@@ -318,9 +314,7 @@ export default function CodeSnippets({
                     <h4 className="font-semibold text-slate-100 text-sm group-hover:text-purple-400 transition-colors">
                       {snippet.title}
                     </h4>
-                    <p className="text-xs text-slate-400 mt-0.5">
-                      {snippet.description}
-                    </p>
+                    <p className="text-xs text-slate-400 mt-0.5">{snippet.description}</p>
                   </div>
                 </div>
               </button>

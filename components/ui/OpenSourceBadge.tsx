@@ -1,12 +1,10 @@
-import GitHubIcon from "@/components/ui/GitHubIcon";
+import GitHubIcon from '@/components/ui/GitHubIcon';
 
 interface OpenSourceBadgeProps {
   className?: string;
 }
 
-export default function OpenSourceBadge({
-  className = "",
-}: OpenSourceBadgeProps) {
+export default function OpenSourceBadge({ className = '' }: OpenSourceBadgeProps) {
   return (
     <a
       href="https://github.com/nicvazquezdev/hispano-lang"
@@ -24,12 +22,7 @@ export default function OpenSourceBadge({
         stroke="currentColor"
         viewBox="0 0 24 24"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 5l7 7-7 7"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
       </svg>
     </a>
   );

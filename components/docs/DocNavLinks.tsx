@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface NavSection {
   id: string;
@@ -30,8 +30,8 @@ export default function DocNavLinks({ sections, activeSection }: DocNavLinksProp
               href={`/documentacion/${section.id}`}
               className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${
                 activeSection === section.id
-                  ? "bg-purple-600 text-white"
-                  : "text-slate-300 hover:bg-slate-700"
+                  ? 'bg-purple-600 text-white'
+                  : 'text-slate-300 hover:bg-slate-700'
               }`}
             >
               {section.title}

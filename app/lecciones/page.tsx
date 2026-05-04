@@ -1,8 +1,8 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import LessonCard from "@/components/lessons/LessonCard";
-import Section from "@/components/ui/Section";
-import { lessons } from "@/lib/lessons";
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import LessonCard from '@/components/lessons/LessonCard';
+import Section from '@/components/ui/Section';
+import { lessons } from '@/lib/lessons';
 
 export default function LeccionesPage() {
   return (

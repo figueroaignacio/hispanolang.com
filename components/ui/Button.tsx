@@ -1,9 +1,9 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
   prev?: boolean;
   next?: boolean;
@@ -11,36 +11,35 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({
   children,
-  variant = "primary",
-  size = "md",
-  className = "",
+  variant = 'primary',
+  size = 'md',
+  className = '',
   prev = false,
   next = false,
   ...props
 }: ButtonProps) {
   const baseClasses =
-    "font-semibold transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer";
+    'font-semibold transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
 
   const variantClasses = {
     primary:
-      "bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold rounded-xl shadow-2xl transform transition-all duration-300",
-    secondary:
-      "bg-slate-700 text-slate-200 hover:bg-slate-600 focus:ring-slate-500",
+      'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold rounded-xl shadow-2xl transform transition-all duration-300',
+    secondary: 'bg-slate-700 text-slate-200 hover:bg-slate-600 focus:ring-slate-500',
     outline:
-      "border-2 border-slate-600 text-slate-200 bg-slate-800/50 hover:bg-slate-700/50 rounded-xl font-semibold",
+      'border-2 border-slate-600 text-slate-200 bg-slate-800/50 hover:bg-slate-700/50 rounded-xl font-semibold',
   };
 
   const sizeClasses = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg",
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-base',
+    lg: 'px-8 py-4 text-lg',
   };
 
-  const label = prev ? "← Anterior" : next ? "Siguiente →" : "";
+  const label = prev ? '← Anterior' : next ? 'Siguiente →' : '';
 
-  const labelColor = variant === "outline" ? "text-slate-500" : "text-white/80";
+  const labelColor = variant === 'outline' ? 'text-slate-500' : 'text-white/80';
 
-  const alignment = prev ? "items-start" : next ? "items-end" : "items-center";
+  const alignment = prev ? 'items-start' : next ? 'items-end' : 'items-center';
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 

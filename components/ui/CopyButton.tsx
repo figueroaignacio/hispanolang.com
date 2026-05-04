@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 interface CopyButtonProps {
   text: string;
   className?: string;
 }
 
-export default function CopyButton({ text, className = "" }: CopyButtonProps) {
+export default function CopyButton({ text, className = '' }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {

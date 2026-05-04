@@ -1,6 +1,6 @@
-import EnhancedCodeEditor from "./EnhancedCodeEditor";
-import OutputConsole from "./OutputConsole";
-import PlaygroundTips from "./PlaygroundTips";
+import EnhancedCodeEditor from './EnhancedCodeEditor';
+import OutputConsole from './OutputConsole';
+import PlaygroundTips from './PlaygroundTips';
 
 interface PlaygroundLayoutProps {
   code: string;

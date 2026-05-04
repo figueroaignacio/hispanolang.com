@@ -16,13 +16,14 @@ Usa 'extiende' para heredar de otra clase y 'super' para llamar al constructor p
     hablar() {
         retornar \`\${este.nombre} hace un sonido\`
     }
+
 }
 
 clase Perro extiende Animal {
-    constructor(nombre, raza) {
-        super(nombre)    // Llama al constructor de Animal
-        este.raza = raza
-    }
+constructor(nombre, raza) {
+super(nombre) // Llama al constructor de Animal
+este.raza = raza
+}
 
     hablar() {
         retornar \`\${este.nombre} dice: ¡Guau!\`
@@ -31,11 +32,12 @@ clase Perro extiende Animal {
     describir() {
         retornar \`\${este.nombre} es un \${este.raza}\`
     }
+
 }
 
 variable perro = nuevo Perro("Max", "Labrador")
-mostrar perro.hablar()     // Max dice: ¡Guau!
-mostrar perro.describir()  // Max es un Labrador`} />
+mostrar perro.hablar() // Max dice: ¡Guau!
+mostrar perro.describir() // Max es un Labrador`} />
 
 - clase Hija extiende Padre - Define herencia
 - super(args) - Llama al constructor del padre
@@ -54,36 +56,39 @@ Diferentes clases pueden tener el mismo método pero comportarse diferente.
     calcularArea() {
         retornar 0
     }
+
 }
 
 clase Rectangulo extiende Figura {
-    constructor(ancho, alto) {
-        super("Rectángulo")
-        este.ancho = ancho
-        este.alto = alto
-    }
+constructor(ancho, alto) {
+super("Rectángulo")
+este.ancho = ancho
+este.alto = alto
+}
 
     calcularArea() {
         retornar este.ancho * este.alto
     }
+
 }
 
 clase Circulo extiende Figura {
-    constructor(radio) {
-        super("Círculo")
-        este.radio = radio
-    }
+constructor(radio) {
+super("Círculo")
+este.radio = radio
+}
 
     calcularArea() {
         retornar 3.14159 * este.radio * este.radio
     }
+
 }
 
 variable rect = nuevo Rectangulo(10, 5)
 variable circ = nuevo Circulo(7)
 
-mostrar rect.nombre + ": " + texto(rect.calcularArea())  // Rectángulo: 50
-mostrar circ.nombre + ": " + texto(circ.calcularArea())  // Círculo: 153.93791`} />
+mostrar rect.nombre + ": " + texto(rect.calcularArea()) // Rectángulo: 50
+mostrar circ.nombre + ": " + texto(circ.calcularArea()) // Círculo: 153.93791`} />
 
 - Cada clase implementa el método a su manera
 - El mismo método funciona diferente según la clase
@@ -105,13 +110,14 @@ mostrar circ.nombre + ": " + texto(circ.calcularArea())  // Círculo: 153.93791`
         mostrar "Empleado: " + este.nombre
         mostrar "Salario: $" + texto(este.calcularSalario())
     }
+
 }
 
 clase Gerente extiende Empleado {
-    constructor(nombre, salarioBase, bono) {
-        super(nombre, salarioBase)
-        este.bono = bono
-    }
+constructor(nombre, salarioBase, bono) {
+super(nombre, salarioBase)
+este.bono = bono
+}
 
     calcularSalario() {
         retornar este.salarioBase + este.bono
@@ -123,14 +129,15 @@ clase Gerente extiende Empleado {
         mostrar "Bono: $" + texto(este.bono)
         mostrar "Total: $" + texto(este.calcularSalario())
     }
+
 }
 
 clase Vendedor extiende Empleado {
-    constructor(nombre, salarioBase, comision, ventas) {
-        super(nombre, salarioBase)
-        este.comision = comision
-        este.ventas = ventas
-    }
+constructor(nombre, salarioBase, comision, ventas) {
+super(nombre, salarioBase)
+este.comision = comision
+este.ventas = ventas
+}
 
     calcularSalario() {
         retornar este.salarioBase + (este.ventas * este.comision)
@@ -143,6 +150,7 @@ clase Vendedor extiende Empleado {
         mostrar "Comisión: " + texto(este.comision * 100) + "%"
         mostrar "Total: $" + texto(este.calcularSalario())
     }
+
 }
 
 mostrar "=== NÓMINA ==="
@@ -188,40 +196,43 @@ ven.mostrarInfo()
     describir() {
         retornar este.marca + " " + este.modelo
     }
+
 }
 
 clase Auto extiende Vehiculo {
-    constructor(marca, modelo, puertas) {
-        super(marca, modelo)
-        este.puertas = puertas
-    }
+constructor(marca, modelo, puertas) {
+super(marca, modelo)
+este.puertas = puertas
+}
 
     describir() {
         retornar "Auto: " + este.marca + " " + este.modelo + " (" + texto(este.puertas) + " puertas)"
     }
+
 }
 
 clase Moto extiende Vehiculo {
-    constructor(marca, modelo, cilindrada) {
-        super(marca, modelo)
-        este.cilindrada = cilindrada
-    }
+constructor(marca, modelo, cilindrada) {
+super(marca, modelo)
+este.cilindrada = cilindrada
+}
 
     describir() {
         retornar "Moto: " + este.marca + " " + este.modelo + " (" + texto(este.cilindrada) + "cc)"
     }
+
 }
 
 variable vehiculos = [
-    nuevo Auto("Toyota", "Corolla", 4),
-    nuevo Moto("Honda", "CBR", 600),
-    nuevo Auto("Ford", "Mustang", 2),
-    nuevo Moto("Yamaha", "R1", 1000)
+nuevo Auto("Toyota", "Corolla", 4),
+nuevo Moto("Honda", "CBR", 600),
+nuevo Auto("Ford", "Mustang", 2),
+nuevo Moto("Yamaha", "R1", 1000)
 ]
 
 mostrar "=== INVENTARIO DE VEHÍCULOS ==="
 vehiculos.recorrer(funcion(v, i) {
-    mostrar (i + 1).aTexto() + ". " + v.describir()
+mostrar (i + 1).aTexto() + ". " + v.describir()
 })
 // Salida:
 // === INVENTARIO DE VEHÍCULOS ===
@@ -231,6 +242,7 @@ vehiculos.recorrer(funcion(v, i) {
 // 4. Moto: Yamaha R1 (1000cc)`} />
 
 Resumen de herencia:
+
 - extiende - Heredar de una clase padre
 - super() - Llamar constructor del padre
 - Sobrescribir métodos para comportamiento especializado

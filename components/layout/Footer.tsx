@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Section from "@/components/ui/Section";
-import GitHubIcon from "@/components/ui/GitHubIcon";
+import Image from 'next/image';
+import Section from '@/components/ui/Section';
+import GitHubIcon from '@/components/ui/GitHubIcon';
 
 export default function Footer() {
   return (

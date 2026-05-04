@@ -11,16 +11,16 @@ Imagina que en la cafetería escolar eliges tu almuerzo por número: 1=Milanesa,
 <Code code={`variable opcionMenu = 2
 
 elegir (opcionMenu) {
-    caso 1:
-        mostrar "Milanesa con puré"
-    caso 2:
-        mostrar "Pizza de muzzarella" // Pizza de muzzarella
-    caso 3:
-        mostrar "Ensalada César"
-    caso 4:
-        mostrar "Pasta con salsa"
-    pordefecto:
-        mostrar "Opción no disponible"
+caso 1:
+mostrar "Milanesa con puré"
+caso 2:
+mostrar "Pizza de muzzarella" // Pizza de muzzarella
+caso 3:
+mostrar "Ensalada César"
+caso 4:
+mostrar "Pasta con salsa"
+pordefecto:
+mostrar "Opción no disponible"
 }`} />
 
 - elegir (variable) evalúa el valor de la variable
@@ -37,33 +37,33 @@ Veamos la diferencia entre usar 'si-sino si' y 'elegir/caso' para el mismo probl
 
 // Con si-sino si (muchas repeticiones)
 si dia == 1 {
-    mostrar "Lunes"
+mostrar "Lunes"
 } sino si dia == 2 {
-    mostrar "Martes"
+mostrar "Martes"
 } sino si dia == 3 {
-    mostrar "Miércoles" // Miércoles
+mostrar "Miércoles" // Miércoles
 } sino si dia == 4 {
-    mostrar "Jueves"
+mostrar "Jueves"
 } sino si dia == 5 {
-    mostrar "Viernes"
+mostrar "Viernes"
 } sino {
-    mostrar "Fin de semana"
+mostrar "Fin de semana"
 }
 
 // Con elegir/caso (más limpio)
 elegir (dia) {
-    caso 1:
-        mostrar "Lunes"
-    caso 2:
-        mostrar "Martes"
-    caso 3:
-        mostrar "Miércoles" // Miércoles
-    caso 4:
-        mostrar "Jueves"
-    caso 5:
-        mostrar "Viernes"
-    pordefecto:
-        mostrar "Fin de semana"
+caso 1:
+mostrar "Lunes"
+caso 2:
+mostrar "Martes"
+caso 3:
+mostrar "Miércoles" // Miércoles
+caso 4:
+mostrar "Jueves"
+caso 5:
+mostrar "Viernes"
+pordefecto:
+mostrar "Fin de semana"
 }`} />
 
 - Ambos hacen exactamente lo mismo
@@ -79,37 +79,37 @@ Un uso común es mostrar información según el día. Como el horario escolar qu
 <Code code={`variable diaSemana = 1
 
 elegir (diaSemana) {
-    caso 1:
-        mostrar "Lunes - Matemática, Historia, Educación Física" // Lunes - Matemática, Historia, Educación Física
-    caso 2:
-        mostrar "Martes - Lengua, Ciencias, Arte"
-    caso 3:
-        mostrar "Miércoles - Matemática, Inglés, Música"
-    caso 4:
-        mostrar "Jueves - Historia, Ciencias, Educación Física"
-    caso 5:
-        mostrar "Viernes - Lengua, Matemática, Laboratorio"
-    caso 6:
-        mostrar "Sábado - No hay clases"
-    caso 7:
-        mostrar "Domingo - No hay clases"
-    pordefecto:
-        mostrar "Día inválido"
+caso 1:
+mostrar "Lunes - Matemática, Historia, Educación Física" // Lunes - Matemática, Historia, Educación Física
+caso 2:
+mostrar "Martes - Lengua, Ciencias, Arte"
+caso 3:
+mostrar "Miércoles - Matemática, Inglés, Música"
+caso 4:
+mostrar "Jueves - Historia, Ciencias, Educación Física"
+caso 5:
+mostrar "Viernes - Lengua, Matemática, Laboratorio"
+caso 6:
+mostrar "Sábado - No hay clases"
+caso 7:
+mostrar "Domingo - No hay clases"
+pordefecto:
+mostrar "Día inválido"
 }
 
 variable mesActual = 12
 
 elegir (mesActual) {
-    caso 1:
-        mostrar "Enero - Vacaciones de verano"
-    caso 2:
-        mostrar "Febrero - Vacaciones de verano"
-    caso 3:
-        mostrar "Marzo - Inicio de clases"
-    caso 12:
-        mostrar "Diciembre - Fin de año escolar" // Diciembre - Fin de año escolar
-    pordefecto:
-        mostrar "Mes regular de clases"
+caso 1:
+mostrar "Enero - Vacaciones de verano"
+caso 2:
+mostrar "Febrero - Vacaciones de verano"
+caso 3:
+mostrar "Marzo - Inicio de clases"
+caso 12:
+mostrar "Diciembre - Fin de año escolar" // Diciembre - Fin de año escolar
+pordefecto:
+mostrar "Mes regular de clases"
 }`} />
 
 - Cada caso representa una opción diferente
@@ -125,23 +125,23 @@ Los casos no solo funcionan con números. También puedes usar texto, como las l
 <Code code={`variable calificacion = "B"
 
 elegir (calificacion) {
-    caso "A":
-        mostrar "Excelente - 90 a 100 puntos"
-        mostrar "¡Felicitaciones!"
-    caso "B":
-        mostrar "Muy Bueno - 80 a 89 puntos" // Muy Bueno - 80 a 89 puntos
-        mostrar "Buen trabajo" // Buen trabajo
-    caso "C":
-        mostrar "Bueno - 70 a 79 puntos"
-        mostrar "Aprobado"
-    caso "D":
-        mostrar "Suficiente - 60 a 69 puntos"
-        mostrar "Debes mejorar"
-    caso "F":
-        mostrar "Reprobado - Menos de 60 puntos"
-        mostrar "Debes recursar"
-    pordefecto:
-        mostrar "Calificación inválida"
+caso "A":
+mostrar "Excelente - 90 a 100 puntos"
+mostrar "¡Felicitaciones!"
+caso "B":
+mostrar "Muy Bueno - 80 a 89 puntos" // Muy Bueno - 80 a 89 puntos
+mostrar "Buen trabajo" // Buen trabajo
+caso "C":
+mostrar "Bueno - 70 a 79 puntos"
+mostrar "Aprobado"
+caso "D":
+mostrar "Suficiente - 60 a 69 puntos"
+mostrar "Debes mejorar"
+caso "F":
+mostrar "Reprobado - Menos de 60 puntos"
+mostrar "Debes recursar"
+pordefecto:
+mostrar "Calificación inválida"
 }`} />
 
 - Los strings (texto) deben ir entre comillas: caso "A"
@@ -157,29 +157,29 @@ Veamos un ejemplo práctico: un sistema para elegir materias optativas según tu
 <Code code={`variable materiaElegida = "Deportes"
 
 elegir (materiaElegida) {
-    caso "Arte":
-        mostrar "=== MATERIA: ARTE ==="
-        mostrar "Horario: Lunes y Miércoles 14:00-16:00"
-        mostrar "Profesor: María González"
-        mostrar "Materiales: Pinceles, témperas, lienzo"
-    caso "Música":
-        mostrar "=== MATERIA: MÚSICA ==="
-        mostrar "Horario: Martes y Jueves 14:00-16:00"
-        mostrar "Profesor: Carlos Ruiz"
-        mostrar "Materiales: Instrumento propio"
-    caso "Deportes":
-        mostrar "=== MATERIA: DEPORTES ===" // === MATERIA: DEPORTES ===
-        mostrar "Horario: Lunes, Miércoles y Viernes 15:00-17:00" // Horario: Lunes, Miércoles y Viernes 15:00-17:00
-        mostrar "Profesor: Ana Martínez" // Profesor: Ana Martínez
-        mostrar "Materiales: Ropa deportiva, zapatillas" // Materiales: Ropa deportiva, zapatillas
-    caso "Teatro":
-        mostrar "=== MATERIA: TEATRO ==="
-        mostrar "Horario: Jueves 14:00-17:00"
-        mostrar "Profesor: Roberto Silva"
-        mostrar "Materiales: Ninguno especial"
-    pordefecto:
-        mostrar "Materia no disponible"
-        mostrar "Opciones: Arte, Música, Deportes, Teatro"
+caso "Arte":
+mostrar "=== MATERIA: ARTE ==="
+mostrar "Horario: Lunes y Miércoles 14:00-16:00"
+mostrar "Profesor: María González"
+mostrar "Materiales: Pinceles, témperas, lienzo"
+caso "Música":
+mostrar "=== MATERIA: MÚSICA ==="
+mostrar "Horario: Martes y Jueves 14:00-16:00"
+mostrar "Profesor: Carlos Ruiz"
+mostrar "Materiales: Instrumento propio"
+caso "Deportes":
+mostrar "=== MATERIA: DEPORTES ===" // === MATERIA: DEPORTES ===
+mostrar "Horario: Lunes, Miércoles y Viernes 15:00-17:00" // Horario: Lunes, Miércoles y Viernes 15:00-17:00
+mostrar "Profesor: Ana Martínez" // Profesor: Ana Martínez
+mostrar "Materiales: Ropa deportiva, zapatillas" // Materiales: Ropa deportiva, zapatillas
+caso "Teatro":
+mostrar "=== MATERIA: TEATRO ==="
+mostrar "Horario: Jueves 14:00-17:00"
+mostrar "Profesor: Roberto Silva"
+mostrar "Materiales: Ninguno especial"
+pordefecto:
+mostrar "Materia no disponible"
+mostrar "Opciones: Arte, Música, Deportes, Teatro"
 }`} />
 
 - Cada caso puede tener múltiples líneas de código
@@ -196,32 +196,34 @@ Guía práctica para decidir cuándo usar cada estructura.
 
 // elegir es mejor para valores exactos
 elegir (opcion) {
-    caso 1:
-        mostrar "Opción A"
-    caso 2:
-        mostrar "Opción B" // Opción B
-    caso 3:
-        mostrar "Opción C"
+caso 1:
+mostrar "Opción A"
+caso 2:
+mostrar "Opción B" // Opción B
+caso 3:
+mostrar "Opción C"
 }
 
 variable nota = 85
 
 // si-sino si es mejor para rangos
 si nota >= 90 {
-    mostrar "A"
+mostrar "A"
 } sino si nota >= 80 {
-    mostrar "B" // B
+mostrar "B" // B
 } sino si nota >= 70 {
-    mostrar "C"
+mostrar "C"
 }`} />
 
 Usa elegir/caso cuando:
+
 - Comparas UNA variable contra valores EXACTOS (==)
 - Tienes muchas opciones específicas (menús, días, letras)
 - Los valores son números o strings concretos
 - Quieres código más limpio y organizado
 
 Usa si-sino si cuando:
+
 - Usas operadores de comparación
 - Verificas rangos (nota >= 90, nota >= 80...)
 - Combinas condiciones con 'y', 'o'
@@ -239,33 +241,33 @@ mostrar "=== SELECTOR DE DIFICULTAD DE EXAMEN ===" // === SELECTOR DE DIFICULTAD
 mostrar "" //
 
 elegir (nivelSeleccionado) {
-    caso 1:
-        mostrar "NIVEL BÁSICO"
-        mostrar "Duración: 60 minutos"
-        mostrar "Preguntas: 20"
-        mostrar "Temas: Conceptos fundamentales"
-        mostrar "Puntaje mínimo: 70 puntos"
-    caso 2:
-        mostrar "NIVEL INTERMEDIO" // NIVEL INTERMEDIO
-        mostrar "Duración: 90 minutos" // Duración: 90 minutos
-        mostrar "Preguntas: 30" // Preguntas: 30
-        mostrar "Temas: Aplicación de conceptos" // Temas: Aplicación de conceptos
-        mostrar "Puntaje mínimo: 75 puntos" // Puntaje mínimo: 75 puntos
-    caso 3:
-        mostrar "NIVEL AVANZADO"
-        mostrar "Duración: 120 minutos"
-        mostrar "Preguntas: 40"
-        mostrar "Temas: Análisis y síntesis"
-        mostrar "Puntaje mínimo: 80 puntos"
-    caso 4:
-        mostrar "NIVEL EXPERTO"
-        mostrar "Duración: 150 minutos"
-        mostrar "Preguntas: 50"
-        mostrar "Temas: Casos complejos y resolución de problemas"
-        mostrar "Puntaje mínimo: 85 puntos"
-    pordefecto:
-        mostrar "Nivel inválido"
-        mostrar "Por favor selecciona: 1, 2, 3 o 4"
+caso 1:
+mostrar "NIVEL BÁSICO"
+mostrar "Duración: 60 minutos"
+mostrar "Preguntas: 20"
+mostrar "Temas: Conceptos fundamentales"
+mostrar "Puntaje mínimo: 70 puntos"
+caso 2:
+mostrar "NIVEL INTERMEDIO" // NIVEL INTERMEDIO
+mostrar "Duración: 90 minutos" // Duración: 90 minutos
+mostrar "Preguntas: 30" // Preguntas: 30
+mostrar "Temas: Aplicación de conceptos" // Temas: Aplicación de conceptos
+mostrar "Puntaje mínimo: 75 puntos" // Puntaje mínimo: 75 puntos
+caso 3:
+mostrar "NIVEL AVANZADO"
+mostrar "Duración: 120 minutos"
+mostrar "Preguntas: 40"
+mostrar "Temas: Análisis y síntesis"
+mostrar "Puntaje mínimo: 80 puntos"
+caso 4:
+mostrar "NIVEL EXPERTO"
+mostrar "Duración: 150 minutos"
+mostrar "Preguntas: 50"
+mostrar "Temas: Casos complejos y resolución de problemas"
+mostrar "Puntaje mínimo: 85 puntos"
+pordefecto:
+mostrar "Nivel inválido"
+mostrar "Por favor selecciona: 1, 2, 3 o 4"
 }
 
 mostrar "" //

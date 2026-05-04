@@ -1,36 +1,36 @@
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import Section from "@/components/ui/Section";
-import Card from "@/components/ui/Card";
-import Button from "@/components/ui/Button";
-import DocNavLinks from "@/components/docs/DocNavLinks";
-import { getDocContent, getDocSlugs } from "@/lib/mdx";
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Section from '@/components/ui/Section';
+import Card from '@/components/ui/Card';
+import Button from '@/components/ui/Button';
+import DocNavLinks from '@/components/docs/DocNavLinks';
+import { getDocContent, getDocSlugs } from '@/lib/mdx';
 
 // Lista de secciones (esto eventualmente vendrá de los archivos)
 const sections = [
-  { id: "variables", title: "Variables" },
-  { id: "constantes", title: "Constantes" },
-  { id: "comentarios", title: "Comentarios" },
-  { id: "tipos-datos", title: "Tipos de Datos" },
-  { id: "metodos-strings", title: "Métodos de Strings" },
-  { id: "template-strings", title: "Template Strings" },
-  { id: "operadores", title: "Operadores" },
-  { id: "condicionales", title: "Condicionales" },
-  { id: "elegir-caso", title: "Elegir/Caso" },
-  { id: "bucles", title: "Bucles" },
-  { id: "funciones", title: "Funciones" },
-  { id: "funciones-flecha", title: "Funciones Flecha" },
-  { id: "funciones-matematicas", title: "Funciones Matemáticas" },
-  { id: "conversion-tipos", title: "Conversión de Tipos" },
-  { id: "metodos-numericos", title: "Métodos Numéricos" },
-  { id: "listas", title: "Listas" },
-  { id: "objetos", title: "Objetos" },
-  { id: "bucles-avanzados", title: "Bucles Avanzados" },
-  { id: "clases", title: "Clases" },
-  { id: "herencia", title: "Herencia" },
-  { id: "manejo-errores", title: "Manejo de Errores" },
+  { id: 'variables', title: 'Variables' },
+  { id: 'constantes', title: 'Constantes' },
+  { id: 'comentarios', title: 'Comentarios' },
+  { id: 'tipos-datos', title: 'Tipos de Datos' },
+  { id: 'metodos-strings', title: 'Métodos de Strings' },
+  { id: 'template-strings', title: 'Template Strings' },
+  { id: 'operadores', title: 'Operadores' },
+  { id: 'condicionales', title: 'Condicionales' },
+  { id: 'elegir-caso', title: 'Elegir/Caso' },
+  { id: 'bucles', title: 'Bucles' },
+  { id: 'funciones', title: 'Funciones' },
+  { id: 'funciones-flecha', title: 'Funciones Flecha' },
+  { id: 'funciones-matematicas', title: 'Funciones Matemáticas' },
+  { id: 'conversion-tipos', title: 'Conversión de Tipos' },
+  { id: 'metodos-numericos', title: 'Métodos Numéricos' },
+  { id: 'listas', title: 'Listas' },
+  { id: 'objetos', title: 'Objetos' },
+  { id: 'bucles-avanzados', title: 'Bucles Avanzados' },
+  { id: 'clases', title: 'Clases' },
+  { id: 'herencia', title: 'Herencia' },
+  { id: 'manejo-errores', title: 'Manejo de Errores' },
 ];
 
 export async function generateStaticParams() {
@@ -52,8 +52,7 @@ export default async function DocPage({ params }: PageProps) {
 
   const currentIndex = sections.findIndex((s) => s.id === slug);
   const previousSection = currentIndex > 0 ? sections[currentIndex - 1] : null;
-  const nextSection =
-    currentIndex < sections.length - 1 ? sections[currentIndex + 1] : null;
+  const nextSection = currentIndex < sections.length - 1 ? sections[currentIndex + 1] : null;
 
   return (
     <div className="min-h-screen relative">
@@ -84,10 +83,7 @@ export default async function DocPage({ params }: PageProps) {
 
             {/* Main Content */}
             <article className="lg:w-3/4 w-full min-h-screen">
-              <Card
-                variant="glass"
-                className="bg-slate-800/80 backdrop-blur-sm"
-              >
+              <Card variant="glass" className="bg-slate-800/80 backdrop-blur-sm">
                 <div className="md:p-6 doc-content">{content}</div>
 
                 {/* Navegación */}
@@ -97,11 +93,7 @@ export default async function DocPage({ params }: PageProps) {
                       <div className="flex-1">
                         {previousSection && (
                           <Link href={`/documentacion/${previousSection.id}`}>
-                            <Button
-                              variant="outline"
-                              className="w-full justify-start"
-                              prev
-                            >
+                            <Button variant="outline" className="w-full justify-start" prev>
                               {previousSection.title}
                             </Button>
                           </Link>
@@ -110,11 +102,7 @@ export default async function DocPage({ params }: PageProps) {
                       <div className="flex-1">
                         {nextSection && (
                           <Link href={`/documentacion/${nextSection.id}`}>
-                            <Button
-                              variant="outline"
-                              className="w-full justify-end"
-                              next
-                            >
+                            <Button variant="outline" className="w-full justify-end" next>
                               {nextSection.title}
                             </Button>
                           </Link>

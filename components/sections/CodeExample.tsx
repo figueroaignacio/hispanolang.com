@@ -7,8 +7,7 @@ export default function CodeExample() {
             Sintaxis Clara y Elegante
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Descubre cómo HispanoLang hace que la programación sea más intuitiva
-            y accesible.
+            Descubre cómo HispanoLang hace que la programación sea más intuitiva y accesible.
           </p>
         </div>
 
@@ -22,7 +21,10 @@ export default function CodeExample() {
               </div>
               <span className="text-gray-400 text-sm ml-4">ejemplo.hl</span>
             </div>
-            <pre className="text-gray-300 text-sm leading-relaxed overflow-x-auto" style={{ fontVariantLigatures: 'none' }}>
+            <pre
+              className="text-gray-300 text-sm leading-relaxed overflow-x-auto"
+              style={{ fontVariantLigatures: 'none' }}
+            >
               <code>{`// Calculadora simple en HispanoLang
 funcion calcular(operacion, a, b) {
     si operacion == "suma" {
@@ -57,12 +59,9 @@ inicio {
 
           <div className="space-y-6">
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                🎯 Sintaxis en Español
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">🎯 Sintaxis en Español</h3>
               <p className="text-gray-600">
-                Palabras clave como{" "}
-                <code className="bg-gray-100 px-2 py-1 rounded">funcion</code>,
+                Palabras clave como <code className="bg-gray-100 px-2 py-1 rounded">funcion</code>,
                 <code className="bg-gray-100 px-2 py-1 rounded">si</code>, y
                 <code className="bg-gray-100 px-2 py-1 rounded">para</code>
                 hacen que el código sea más natural de leer.
@@ -70,22 +69,18 @@ inicio {
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                ⚡ Tipado Estático
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">⚡ Tipado Estático</h3>
               <p className="text-gray-600">
-                Sistema de tipos robusto que previene errores en tiempo de
-                compilación, similar a TypeScript pero con sintaxis más clara.
+                Sistema de tipos robusto que previene errores en tiempo de compilación, similar a
+                TypeScript pero con sintaxis más clara.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                🔧 Herramientas Modernas
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">🔧 Herramientas Modernas</h3>
               <p className="text-gray-600">
-                Compilador rápido, formateador automático, y soporte completo
-                para editores modernos con autocompletado inteligente.
+                Compilador rápido, formateador automático, y soporte completo para editores modernos
+                con autocompletado inteligente.
               </p>
             </div>
           </div>

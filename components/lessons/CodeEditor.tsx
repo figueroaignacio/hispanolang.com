@@ -3,11 +3,7 @@
 import { useState, useEffect } from 'react';
 import EnhancedCodeEditor from '@/components/playground/EnhancedCodeEditor';
 import OutputConsole from '@/components/playground/OutputConsole';
-import {
-  SimpleValidation,
-  ValidationResult,
-  validateExercise,
-} from '@/lib/validation';
+import { SimpleValidation, ValidationResult, validateExercise } from '@/lib/validation';
 
 interface CodeEditorProps {
   initialCode: string;
@@ -27,8 +23,7 @@ export default function CodeEditor({
   const [code, setCode] = useState(initialCode);
   const [output, setOutput] = useState('');
   const [isRunning, setIsRunning] = useState(false);
-  const [validationResult, setValidationResult] =
-    useState<ValidationResult | null>(null);
+  const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
   const [showValidation, setShowValidation] = useState(false);
 
   useEffect(() => {
@@ -94,8 +89,7 @@ export default function CodeEditor({
         setShowValidation(true);
       }
     } catch (error) {
-      const errorMessage =
-        error instanceof Error ? error.message : 'Error desconocido';
+      const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
       setOutput(errorMessage);
       const validationRes = validateExercise(validation, {
         code,
@@ -136,14 +130,20 @@ export default function CodeEditor({
 
       {/* Validation feedback */}
       {showValidation && validationResult && (
-        <div className={`p-4 rounded-lg border ${
-          validationResult.isValid
-            ? 'bg-green-900/30 border-green-700/50'
-            : 'bg-red-900/30 border-red-700/50'
-        }`}>
-          <div className={`flex items-center gap-2 ${validationResult.failed.length > 0 ? 'mb-2' : ''}`}>
+        <div
+          className={`p-4 rounded-lg border ${
+            validationResult.isValid
+              ? 'bg-green-900/30 border-green-700/50'
+              : 'bg-red-900/30 border-red-700/50'
+          }`}
+        >
+          <div
+            className={`flex items-center gap-2 ${validationResult.failed.length > 0 ? 'mb-2' : ''}`}
+          >
             <span className="text-lg">{validationResult.isValid ? '✅' : '❌'}</span>
-            <span className={`font-medium ${validationResult.isValid ? 'text-green-300' : 'text-red-300'}`}>
+            <span
+              className={`font-medium ${validationResult.isValid ? 'text-green-300' : 'text-red-300'}`}
+            >
               {validationResult.isValid ? '¡Correcto!' : 'Intenta de nuevo'}
             </span>
           </div>

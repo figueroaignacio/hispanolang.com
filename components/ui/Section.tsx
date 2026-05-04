@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface SectionProps {
   children: ReactNode;
   className?: string;
-  background?: "light" | "dark";
+  background?: 'light' | 'dark';
   badge?: { emoji: string; text: string };
   title?: string;
   titleGradient?: string;
@@ -12,8 +12,8 @@ interface SectionProps {
 
 export default function Section({
   children,
-  className = "",
-  background = "light",
+  className = '',
+  background = 'light',
   badge,
   title,
   titleGradient,
@@ -21,14 +21,14 @@ export default function Section({
 }: SectionProps) {
   const textClasses = {
     light: {
-      badge: "text-slate-200",
-      title: "text-slate-100",
-      description: "text-slate-300",
+      badge: 'text-slate-200',
+      title: 'text-slate-100',
+      description: 'text-slate-300',
     },
     dark: {
-      badge: "text-white/90",
-      title: "text-white",
-      description: "text-white/80",
+      badge: 'text-white/90',
+      title: 'text-white',
+      description: 'text-white/80',
     },
   };
 
@@ -43,7 +43,9 @@ export default function Section({
         {(badge || title || description) && (
           <div className="text-center mb-16">
             {badge && (
-              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 ${textClasses[background].badge} mb-6`}>
+              <div
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 ${textClasses[background].badge} mb-6`}
+              >
                 <span>{badge.emoji}</span>
                 <span className="text-sm font-medium">{badge.text}</span>
               </div>

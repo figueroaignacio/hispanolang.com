@@ -1,13 +1,13 @@
-import Link from "next/link";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import Button from "@/components/ui/Button";
-import { Metadata } from "next";
+import Link from 'next/link';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Button from '@/components/ui/Button';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "404 - Página No Encontrada",
+  title: '404 - Página No Encontrada',
   description:
-    "La página que buscas no existe. Explora HispanoLang, el lenguaje de programación en español.",
+    'La página que buscas no existe. Explora HispanoLang, el lenguaje de programación en español.',
   robots: {
     index: false,
     follow: true,
@@ -40,9 +40,8 @@ export default function NotFound() {
           </h2>
 
           <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-            Parece que el intérprete no pudo encontrar esta ruta. No te
-            preocupes, aquí tienes algunas sugerencias para continuar tu viaje
-            con HispanoLang.
+            Parece que el intérprete no pudo encontrar esta ruta. No te preocupes, aquí tienes
+            algunas sugerencias para continuar tu viaje con HispanoLang.
           </p>
 
           {/* Enlaces útiles */}
@@ -67,9 +66,7 @@ export default function NotFound() {
           {/* Código de ejemplo motivacional */}
           <div className="bg-slate-900/90 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 max-w-2xl mx-auto">
             <div className="font-mono text-left text-sm space-y-2">
-              <div className="text-green-600">
-                {"// No te rindas, sigue explorando"}
-              </div>
+              <div className="text-green-600">{'// No te rindas, sigue explorando'}</div>
               <div className="flex gap-2">
                 <span className="text-purple-400">variable</span>
                 <span className="text-orange-400">exito</span>
@@ -78,9 +75,7 @@ export default function NotFound() {
               </div>
               <div className="flex gap-2">
                 <span className="text-purple-400">mostrar</span>
-                <span className="text-green-400">
-                  &quot;¡Continúa aprendiendo!&quot;
-                </span>
+                <span className="text-green-400">&quot;¡Continúa aprendiendo!&quot;</span>
               </div>
             </div>
           </div>

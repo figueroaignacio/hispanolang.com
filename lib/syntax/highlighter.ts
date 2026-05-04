@@ -23,10 +23,7 @@ export interface HighlightedLine {
  * Parse a template string and extract interpolations
  * Returns segments for the template parts and highlighted interpolation content
  */
-function parseTemplateString(
-  templateStr: string,
-  theme: Theme
-): HighlightedSegment[] {
+function parseTemplateString(templateStr: string, theme: Theme): HighlightedSegment[] {
   const segments: HighlightedSegment[] = [];
 
   // Remove the backticks
@@ -185,10 +182,7 @@ export function tokenize(code: string): Token[] {
 /**
  * Simple conversion without template string processing (to avoid recursion)
  */
-function tokensToSegmentsSimple(
-  tokens: Token[],
-  theme: Theme
-): HighlightedSegment[] {
+function tokensToSegmentsSimple(tokens: Token[], theme: Theme): HighlightedSegment[] {
   return tokens.map((token) => ({
     text: token.value,
     type: token.type,
@@ -225,10 +219,7 @@ export function tokensToSegments(
 /**
  * Highlight a single line of code
  */
-export function highlightLine(
-  line: string,
-  theme: Theme = defaultTheme
-): HighlightedSegment[] {
+export function highlightLine(line: string, theme: Theme = defaultTheme): HighlightedSegment[] {
   const tokens = tokenize(line);
   return tokensToSegments(tokens, theme);
 }
@@ -236,10 +227,7 @@ export function highlightLine(
 /**
  * Highlight multiple lines of code
  */
-export function highlightCode(
-  code: string,
-  theme: Theme = defaultTheme
-): HighlightedLine[] {
+export function highlightCode(code: string, theme: Theme = defaultTheme): HighlightedLine[] {
   const lines = code.split('\n');
 
   return lines.map((line, index) => ({
@@ -252,10 +240,7 @@ export function highlightCode(
  * Simple highlight function that returns segments for a code string
  * (without splitting into lines)
  */
-export function highlight(
-  code: string,
-  theme: Theme = defaultTheme
-): HighlightedSegment[] {
+export function highlight(code: string, theme: Theme = defaultTheme): HighlightedSegment[] {
   const tokens = tokenize(code);
   return tokensToSegments(tokens, theme);
 }

@@ -1,5 +1,4 @@
-import Card from "@/components/ui/Card";
-import DocNavMobile from "./DocNavMobile";
+import DocNavMobile from './DocNavMobile';
 
 interface NavSection {
   id: string;
@@ -12,11 +11,7 @@ interface DocNavProps {
   onSectionChange: (sectionId: string) => void;
 }
 
-export default function DocNav({
-  sections,
-  activeSection,
-  onSectionChange,
-}: DocNavProps) {
+export default function DocNav({ sections, activeSection, onSectionChange }: DocNavProps) {
   return (
     <>
       {/* Desktop: Sidebar menu */}
@@ -31,8 +26,8 @@ export default function DocNav({
               onClick={() => onSectionChange(section.id)}
               className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                 activeSection === section.id
-                  ? "bg-purple-600 text-white"
-                  : "text-slate-300 hover:bg-slate-700"
+                  ? 'bg-purple-600 text-white'
+                  : 'text-slate-300 hover:bg-slate-700'
               }`}
             >
               {section.title}

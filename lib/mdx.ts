@@ -1,9 +1,9 @@
-import fs from "fs";
-import path from "path";
-import { compileMDX } from "next-mdx-remote/rsc";
-import { mdxComponents } from "@/components/mdx";
+import fs from 'fs';
+import path from 'path';
+import { compileMDX } from 'next-mdx-remote/rsc';
+import { mdxComponents } from '@/components/mdx';
 
-const CONTENT_PATH = path.join(process.cwd(), "lib/content");
+const CONTENT_PATH = path.join(process.cwd(), 'lib/content');
 
 export interface DocMeta {
   title: string;
@@ -11,13 +11,13 @@ export interface DocMeta {
 }
 
 export async function getDocContent(slug: string) {
-  const filePath = path.join(CONTENT_PATH, slug, "docs.mdx");
+  const filePath = path.join(CONTENT_PATH, slug, 'docs.mdx');
 
   if (!fs.existsSync(filePath)) {
     return null;
   }
 
-  const source = fs.readFileSync(filePath, "utf-8");
+  const source = fs.readFileSync(filePath, 'utf-8');
 
   const { content } = await compileMDX({
     source,
@@ -36,7 +36,7 @@ export function getDocSlugs(): string[] {
   }
 
   return fs.readdirSync(CONTENT_PATH).filter((dir) => {
-    const docsPath = path.join(CONTENT_PATH, dir, "docs.mdx");
+    const docsPath = path.join(CONTENT_PATH, dir, 'docs.mdx');
     return fs.existsSync(docsPath);
   });
 }

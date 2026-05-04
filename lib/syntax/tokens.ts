@@ -39,11 +39,7 @@ export interface TokenPattern {
 /**
  * Keywords for variable/constant declaration
  */
-const DECLARATION_KEYWORDS = [
-  'variable',
-  'constante',
-  'var',
-];
+const DECLARATION_KEYWORDS = ['variable', 'constante', 'var'];
 
 /**
  * Control flow keywords
@@ -69,23 +65,12 @@ const CONTROL_FLOW_KEYWORDS = [
 /**
  * OOP and function keywords
  */
-const OOP_KEYWORDS = [
-  'funcion',
-  'clase',
-  'constructor',
-  'este',
-  'nuevo',
-  'extiende',
-  'super',
-];
+const OOP_KEYWORDS = ['funcion', 'clase', 'constructor', 'este', 'nuevo', 'extiende', 'super'];
 
 /**
  * Built-in commands (no parentheses)
  */
-const BUILTIN_COMMANDS = [
-  'mostrar',
-  'leer',
-];
+const BUILTIN_COMMANDS = ['mostrar', 'leer'];
 
 /**
  * Built-in functions (with parentheses)

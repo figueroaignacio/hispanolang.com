@@ -1,38 +1,37 @@
 const fs = require('fs');
 const path = require('path');
 
-// Import data
 const dataPath = path.join(__dirname, '../lib/data.ts');
-const dataContent = fs.readFileSync(dataPath, 'utf-8');
+const _dataContent = fs.readFileSync(dataPath, 'utf-8');
 
 // Extract docsData by evaluating the export
 // This is a simplified parser - we'll extract the structure manually
 
 const slugMap = {
-  'variables': 'variables',
-  'constantes': 'constantes',
-  'comentarios': 'comentarios',
-  'tiposDatos': 'tipos-datos',
-  'metodosStrings': 'metodos-strings',
-  'templateStrings': 'template-strings',
-  'operadores': 'operadores',
-  'condicionales': 'condicionales',
-  'elegirCaso': 'elegir-caso',
-  'bucles': 'bucles',
-  'funciones': 'funciones',
-  'funcionesFlecha': 'funciones-flecha',
-  'funcionesMatematicas': 'funciones-matematicas',
-  'conversionTipos': 'conversion-tipos',
-  'metodosNumericos': 'metodos-numericos',
-  'listas': 'listas',
-  'objetos': 'objetos',
-  'buclesAvanzados': 'bucles-avanzados',
-  'clases': 'clases',
-  'herencia': 'herencia',
-  'manejoErrores': 'manejo-errores',
+  variables: 'variables',
+  constantes: 'constantes',
+  comentarios: 'comentarios',
+  tiposDatos: 'tipos-datos',
+  metodosStrings: 'metodos-strings',
+  templateStrings: 'template-strings',
+  operadores: 'operadores',
+  condicionales: 'condicionales',
+  elegirCaso: 'elegir-caso',
+  bucles: 'bucles',
+  funciones: 'funciones',
+  funcionesFlecha: 'funciones-flecha',
+  funcionesMatematicas: 'funciones-matematicas',
+  conversionTipos: 'conversion-tipos',
+  metodosNumericos: 'metodos-numericos',
+  listas: 'listas',
+  objetos: 'objetos',
+  buclesAvanzados: 'bucles-avanzados',
+  clases: 'clases',
+  herencia: 'herencia',
+  manejoErrores: 'manejo-errores',
 };
 
-function convertToMdx(section) {
+function _convertToMdx(section) {
   let mdx = `# ${section.title}\n\n${section.description}\n\n`;
 
   for (const sub of section.subsections) {

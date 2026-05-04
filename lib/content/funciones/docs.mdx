@@ -19,9 +19,9 @@ mostrar "Listo!" // Listo!
 
 // Con funciones: código reutilizable
 funcion calentar(comida, minutos) {
-    mostrar "Calentando " + comida + "..."
-    mostrar "Tiempo: " + minutos + " minutos"
-    mostrar "Listo!"
+mostrar "Calentando " + comida + "..."
+mostrar "Tiempo: " + minutos + " minutos"
+mostrar "Listo!"
 }
 
 calentar("pizza", 2) // Calentando pizza... / Tiempo: 2 minutos / Listo!
@@ -50,9 +50,9 @@ Para crear una función usas la palabra 'funcion', le das un nombre, y defines q
 tostarPan() // Tostando pan... / Temperatura: Alta / Tiempo: 3 minutos / ¡Pan tostado listo!
 
 funcion licuarFrutas() {
-    mostrar "Licuando frutas..."
-    mostrar "Velocidad: Máxima"
-    mostrar "¡Smoothie listo!"
+mostrar "Licuando frutas..."
+mostrar "Velocidad: Máxima"
+mostrar "¡Smoothie listo!"
 }
 
 // Podemos llamarla múltiples veces
@@ -83,9 +83,9 @@ calentar("leche", 1, "Media") // Calentando leche / Tiempo: 1 minutos / Potencia
 calentar("arroz", 5, "Alta") // Calentando arroz / Tiempo: 5 minutos / Potencia: Alta / ¡Listo!
 
 funcion tostar(alimento, nivel) {
-    mostrar "Tostando " + alimento
-    mostrar "Nivel: " + nivel
-    mostrar "¡Tostado perfecto!"
+mostrar "Tostando " + alimento
+mostrar "Nivel: " + nivel
+mostrar "¡Tostado perfecto!"
 }
 
 tostar("pan", 3) // Tostando pan / Nivel: 3 / ¡Tostado perfecto!
@@ -115,8 +115,8 @@ variable tiempo2 = calcularTiempoMicroondas(300)
 mostrar "Para 300g necesitas: " + tiempo2 + " minutos" // Para 300g necesitas: 3 minutos
 
 funcion licuar(fruta1, fruta2) {
-    variable smoothie = fruta1 + " con " + fruta2
-    retornar smoothie
+variable smoothie = fruta1 + " con " + fruta2
+retornar smoothie
 }
 
 variable bebida = licuar("frutilla", "banana")
@@ -146,8 +146,8 @@ lavarPlatos(10) // Lavando 10 platos... / Ciclo: Normal / ¡Platos limpios!
 
 // Función CON retorno: te da algo
 funcion hacerCafe(tipo) {
-    variable cafe = "Café " + tipo + " listo"
-    retornar cafe
+variable cafe = "Café " + tipo + " listo"
+retornar cafe
 }
 
 variable miCafe = hacerCafe("Americano")
@@ -158,8 +158,8 @@ mostrar tuCafe // Café Cappuccino listo
 
 // Puedes usar el retorno en cálculos
 funcion calcularCalorias(porcion) {
-    variable calorias = porcion * 150
-    retornar calorias
+variable calorias = porcion \* 150
+retornar calorias
 }
 
 variable totalCalorias = calcularCalorias(2) + calcularCalorias(3)
@@ -178,18 +178,18 @@ Lo que pasa dentro del microondas se queda dentro del microondas. Las variables 
 <Code code={`variable temperaturaExterna = 25
 
 funcion calentar(comida) {
-    variable temperaturaInterna = 100  // Solo existe aquí
-    mostrar "Dentro del microondas: " + temperaturaInterna + "°C"
-    mostrar "Temperatura externa: " + temperaturaExterna + "°C"
-    mostrar "Calentando: " + comida
+variable temperaturaInterna = 100 // Solo existe aquí
+mostrar "Dentro del microondas: " + temperaturaInterna + "°C"
+mostrar "Temperatura externa: " + temperaturaExterna + "°C"
+mostrar "Calentando: " + comida
 }
 
 calentar("sopa") // Dentro del microondas: 100°C / Temperatura externa: 25°C / Calentando: sopa
 mostrar "Afuera: " + temperaturaExterna + "°C" // Afuera: 25°C
 
 funcion cocinar() {
-    variable platoPrincipal = "Pasta"  // Solo existe aquí
-    mostrar "Cocinando: " + platoPrincipal
+variable platoPrincipal = "Pasta" // Solo existe aquí
+mostrar "Cocinando: " + platoPrincipal
 }
 
 cocinar() // Cocinando: Pasta`} />
@@ -210,31 +210,32 @@ A veces una receta usa varios electrodomésticos: primero la licuadora, luego el
 }
 
 funcion cocinar(ingrediente, minutos) {
-    mostrar "Cocinando " + ingrediente + " por " + minutos + " minutos"
-    retornar ingrediente + " cocido"
+mostrar "Cocinando " + ingrediente + " por " + minutos + " minutos"
+retornar ingrediente + " cocido"
 }
 
 funcion prepararSopa() {
-    variable cebolla = picar("cebolla")
-    variable zanahoria = picar("zanahoria")
+variable cebolla = picar("cebolla")
+variable zanahoria = picar("zanahoria")
 
     mostrar "Agregando agua y sal" // Agregando agua y sal
 
     variable resultado = cocinar("sopa", 10) // Cocinando sopa por 10 minutos
     retornar resultado
+
 }
 
 variable sopa = prepararSopa()
 mostrar "Resultado: " + sopa // Resultado: sopa cocido
 
 funcion calcularPorciones(personas) {
-    retornar personas * 250
+retornar personas \* 250
 }
 
 funcion cocinarArroz(personas) {
-    variable gramos = calcularPorciones(personas)
-    mostrar "Cocinando " + gramos + "g de arroz" // Cocinando 1000g de arroz
-    retornar "Arroz para " + personas + " personas"
+variable gramos = calcularPorciones(personas)
+mostrar "Cocinando " + gramos + "g de arroz" // Cocinando 1000g de arroz
+retornar "Arroz para " + personas + " personas"
 }
 
 variable plato = cocinarArroz(4)

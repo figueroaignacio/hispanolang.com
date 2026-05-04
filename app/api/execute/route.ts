@@ -1,12 +1,12 @@
-import { NextRequest, NextResponse } from "next/server";
-import { interpret } from "hispano-lang";
+import { NextRequest, NextResponse } from 'next/server';
+import { interpret } from 'hispano-lang';
 
 export async function POST(request: NextRequest) {
   try {
     const { code } = await request.json();
 
-    if (!code || typeof code !== "string") {
-      return NextResponse.json({ error: "Código no válido" }, { status: 400 });
+    if (!code || typeof code !== 'string') {
+      return NextResponse.json({ error: 'Código no válido' }, { status: 400 });
     }
 
     const result = interpret(code);
@@ -21,9 +21,9 @@ export async function POST(request: NextRequest) {
       {
         success: false,
         output: [],
-        error: error instanceof Error ? error.message : "Error desconocido",
+        error: error instanceof Error ? error.message : 'Error desconocido',
       },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

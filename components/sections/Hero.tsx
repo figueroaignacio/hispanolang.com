@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Button from "@/components/ui/Button";
-import OpenSourceBadge from "@/components/ui/OpenSourceBadge";
+import Link from 'next/link';
+import Button from '@/components/ui/Button';
+import OpenSourceBadge from '@/components/ui/OpenSourceBadge';
 
 export default function Hero() {
   return (
@@ -22,10 +22,9 @@ export default function Hero() {
               </h1>
 
               <p className="text-lg xl:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                <strong>HispanoLang</strong> es un lenguaje de programación
-                moderno diseñado para que aprender a programar sea tan natural
-                como hablar en español. Sintaxis clara, ejemplos prácticos y una
-                comunidad hispanohablante.
+                <strong>HispanoLang</strong> es un lenguaje de programación moderno diseñado para
+                que aprender a programar sea tan natural como hablar en español. Sintaxis clara,
+                ejemplos prácticos y una comunidad hispanohablante.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
@@ -35,11 +34,7 @@ export default function Hero() {
                   </Button>
                 </Link>
                 <Link href="/documentacion" className="w-full sm:w-auto">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="w-full sm:w-auto"
-                  >
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto">
                     Ver documentación
                   </Button>
                 </Link>
@@ -58,16 +53,12 @@ export default function Hero() {
                 </div>
 
                 <div className="font-mono text-xs sm:text-sm space-y-2 sm:space-y-3 overflow-x-auto">
-                  <div className="text-green-600">
-                    {"// Saludo personalizado"}
-                  </div>
+                  <div className="text-green-600">{'// Saludo personalizado'}</div>
                   <div className="flex gap-2">
                     <div className="text-purple-400">variable</div>
                     <div className="text-orange-400">lenguaje</div>
                     <div className="text-slate-200">=</div>
-                    <div className="text-green-400">
-                      &quot;HispanoLang&quot;
-                    </div>
+                    <div className="text-green-400">&quot;HispanoLang&quot;</div>
                   </div>
 
                   <div className="flex gap-2">
@@ -77,9 +68,7 @@ export default function Hero() {
                     <div className="text-green-400">&quot;! 👋&quot;</div>
                   </div>
 
-                  <div className="text-green-600">
-                    {"// Calculadora simple"}
-                  </div>
+                  <div className="text-green-600">{'// Calculadora simple'}</div>
                   <div className="flex gap-2">
                     <div className="text-purple-400">variable</div>
                     <div className="text-orange-400">a</div>
@@ -100,9 +89,7 @@ export default function Hero() {
                   </div>
                   <div className="flex gap-2">
                     <div className="text-purple-400">mostrar</div>
-                    <div className="text-green-400">
-                      &quot;La suma es: &quot;
-                    </div>
+                    <div className="text-green-400">&quot;La suma es: &quot;</div>
                     <div className="text-orange-400">+ suma</div>
                   </div>
                 </div>

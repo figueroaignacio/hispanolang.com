@@ -1,5 +1,5 @@
-import { FiCommand, FiBookOpen, FiLayers } from "react-icons/fi";
-import Link from "next/link";
+import { FiCommand, FiBookOpen, FiLayers } from 'react-icons/fi';
+import Link from 'next/link';
 
 export default function PlaygroundTips() {
   return (
@@ -8,9 +8,7 @@ export default function PlaygroundTips() {
         <div className="hidden md:block">
           <div className="flex items-center space-x-2 mb-3">
             <FiCommand className="w-4 h-4 text-purple-400" />
-            <h4 className="font-semibold text-slate-100 text-xs uppercase tracking-wide">
-              Atajos
-            </h4>
+            <h4 className="font-semibold text-slate-100 text-xs uppercase tracking-wide">Atajos</h4>
           </div>
           <ul className="text-xs text-slate-300 space-y-1.5">
             <li className="flex items-center space-x-1">

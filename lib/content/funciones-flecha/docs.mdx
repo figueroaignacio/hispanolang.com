@@ -14,14 +14,14 @@ funcion doble(x) {
 }
 
 // Función flecha - mismo resultado, menos código
-variable doble = x => x * 2
+variable doble = x => x \* 2
 
 mostrar doble(5) // 10
 mostrar doble(10) // 20
 
 // Otro ejemplo
 funcion sumar(a, b) {
-    retornar a + b
+retornar a + b
 }
 
 // Versión flecha
@@ -47,7 +47,7 @@ variable saludar = () => "Hola!"
 mostrar saludar() // Hola!
 
 // UN parámetro: sin paréntesis
-variable duplicar = x => x * 2
+variable duplicar = x => x \* 2
 mostrar duplicar(4) // 8
 
 // DOS+ parámetros: con paréntesis
@@ -55,7 +55,7 @@ variable sumar = (a, b) => a + b
 mostrar sumar(5, 3) // 8
 
 // Cualquier expresión
-variable calcularIVA = precio => precio * 1.21
+variable calcularIVA = precio => precio \* 1.21
 mostrar calcularIVA(100) // 121`} />
 
 - Sin parámetros: () => resultado
@@ -74,13 +74,13 @@ funcion triple(numero) {
 }
 
 // Flecha: 1 línea
-variable triple = numero => numero * 3
+variable triple = numero => numero \* 3
 
 mostrar triple(5) // 15
 
 // Normal
 funcion esPar(n) {
-    retornar n % 2 == 0
+retornar n % 2 == 0
 }
 
 // Flecha
@@ -91,7 +91,7 @@ mostrar esPar(7) // falso
 
 // Normal
 funcion formatearPrecio(precio) {
-    retornar "$" + precio
+retornar "$" + precio
 }
 
 // Flecha
@@ -120,7 +120,7 @@ mostrar mayorDeEdad(21) // verdadero
 variable concatenar = (a, b) => a + " " + b
 mostrar concatenar("Hola", "Mundo") // Hola Mundo
 
-variable descuento = precio => precio * 0.8
+variable descuento = precio => precio \* 0.8
 mostrar descuento(100) // 80`} />
 
 - Si la función es UNA sola expresión → retorno automático
@@ -142,17 +142,17 @@ A veces necesitas escribir un mensaje más largo con varias oraciones. Para func
 mostrar calcularDescuento(1000, 20) // 800
 
 variable saludarPersona = nombre => {
-    variable saludo = "Hola " + nombre
-    variable mensaje = saludo + ", ¿cómo estás?"
-    retornar mensaje
+variable saludo = "Hola " + nombre
+variable mensaje = saludo + ", ¿cómo estás?"
+retornar mensaje
 }
 
 mostrar saludarPersona("Ana") // Hola Ana, ¿cómo estás?
 
 variable calcularTotal = (precio, cantidad, iva) => {
-    variable subtotal = precio * cantidad
-    variable conIVA = subtotal * (1 + iva)
-    retornar conIVA
+variable subtotal = precio _ cantidad
+variable conIVA = subtotal _ (1 + iva)
+retornar conIVA
 }
 
 mostrar calcularTotal(100, 3, 0.21) // 363`} />
@@ -182,17 +182,17 @@ mostrar calificar(75) // Aprobado
 mostrar calificar(50) // Reprobado
 
 variable tipoDescuento = cantidad => {
-    si cantidad >= 100 {
-        retornar 0.30
-    } sino si cantidad >= 50 {
-        retornar 0.20
-    } sino {
-        retornar 0.10
-    }
+si cantidad >= 100 {
+retornar 0.30
+} sino si cantidad >= 50 {
+retornar 0.20
+} sino {
+retornar 0.10
+}
 }
 
-mostrar "Descuento: " + (tipoDescuento(120) * 100) + "%" // Descuento: 30%
-mostrar "Descuento: " + (tipoDescuento(60) * 100) + "%" // Descuento: 20%`} />
+mostrar "Descuento: " + (tipoDescuento(120) _ 100) + "%" // Descuento: 30%
+mostrar "Descuento: " + (tipoDescuento(60) _ 100) + "%" // Descuento: 20%`} />
 
 - Funciones flecha pueden tener condicionales
 - Necesitas llaves (llaves) para múltiples líneas
@@ -212,14 +212,14 @@ mostrar "100°C = " + celsiusAFahrenheit(100) + "°F" // 100°C = 212°F
 mostrar "212°F = " + fahrenheitACelsius(212) + "°C" // 212°F = 100°C
 
 // Conversiones de distancia
-variable kmAMillas = km => km * 0.621371
+variable kmAMillas = km => km \* 0.621371
 variable millasAKm = mi => mi / 0.621371
 
 mostrar "10km = " + kmAMillas(10) + " millas" // 10km = 6.21371 millas
 mostrar "10mi = " + millasAKm(10) + " km" // 10mi = 16.0934 km
 
 // Calculadoras financieras
-variable calcularPropina = (total, porcentaje) => total * (porcentaje / 100)
+variable calcularPropina = (total, porcentaje) => total \* (porcentaje / 100)
 
 mostrar "Propina 15%: $" + calcularPropina(500, 15) // Propina 15%: $75
 mostrar "Propina 20%: $" + calcularPropina(500, 20) // Propina 20%: $100
@@ -239,12 +239,14 @@ mostrar "12 cuotas de: $" + calcularCuotas(1200, 12) // 12 cuotas de: $100`} />
 Como elegir entre escribir un mensaje completo formal o uno casual abreviado, hay situaciones donde conviene cada tipo de función.
 
 Usa función FLECHA cuando:
+
 - La función es simple (1-2 líneas)
 - Solo hace un cálculo o transformación
 - Es una función auxiliar rápida
 - Ejemplo: conversiones, validaciones, cálculos
 
 Usa función NORMAL cuando:
+
 - La función es compleja (5+ líneas)
 - Tiene múltiples pasos o lógica
 - Muestra mensajes o tiene efectos secundarios

@@ -1,0 +1,14 @@
+.next
+out
+dist
+build
+node_modules
+package-lock.json
+pnpm-lock.yaml
+coverage
+public
+.eslintrc
+eslint.config.mjs
+.postcssrc
+postcss.config.mjs
+tailwind.config

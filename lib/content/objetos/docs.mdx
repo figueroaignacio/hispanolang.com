@@ -22,10 +22,10 @@ Los objetos agrupan datos relacionados con nombres (claves) que los identifican.
 mostrar perfil // { nombre: "Juan Pérez", usuario: "@juanperez", bio: "Desarrollador", seguidores: 1500, seguidos: 300, verificado: falso }
 
 variable producto = {
-    nombre: "Mouse Gamer",
-    precio: 150,
-    marca: "Logitech",
-    stock: 25
+nombre: "Mouse Gamer",
+precio: 150,
+marca: "Logitech",
+stock: 25
 }
 
 mostrar producto // { nombre: "Mouse Gamer", precio: 150, marca: "Logitech", stock: 25 }
@@ -58,9 +58,9 @@ mostrar "Seguidos: " + texto(perfil.seguidos) // Seguidos: 180
 mostrar "Verificado: " + texto(perfil.verificado) // Verificado: verdadero
 
 variable producto = {
-    nombre: "Teclado",
-    precio: 300,
-    stock: 15
+nombre: "Teclado",
+precio: 300,
+stock: 15
 }
 
 mostrar "" //
@@ -126,11 +126,11 @@ mostrar "Total: " + texto(seguidores.longitud()) // Total: 4
 mostrar "" //
 mostrar "=== OBJETO: DATOS ESTRUCTURADOS ===" // === OBJETO: DATOS ESTRUCTURADOS ===
 variable perfil = {
-    nombre: "Juan Pérez",
-    usuario: "@juan",
-    seguidores: 1500,
-    seguidos: 300,
-    verificado: falso
+nombre: "Juan Pérez",
+usuario: "@juan",
+seguidores: 1500,
+seguidos: 300,
+verificado: falso
 }
 
 mostrar "Nombre: " + perfil.nombre // Nombre: Juan Pérez
@@ -140,10 +140,10 @@ mostrar "Seguidores: " + texto(perfil.seguidores) // Seguidores: 1500
 mostrar "" //
 mostrar "=== COMBINADOS ===" // === COMBINADOS ===
 variable perfilCompleto = {
-    nombre: "Ana García",
-    usuario: "@ana",
-    posts: ["Foto1", "Foto2", "Foto3"],
-    seguidores: 2500
+nombre: "Ana García",
+usuario: "@ana",
+posts: ["Foto1", "Foto2", "Foto3"],
+seguidores: 2500
 }
 
 mostrar "Usuario: " + perfilCompleto.usuario // Usuario: @ana
@@ -151,12 +151,14 @@ mostrar "Posts: " + texto(perfilCompleto.posts) // Posts: ["Foto1", "Foto2", "Fo
 mostrar "Primer post: " + perfilCompleto.posts[0] // Primer post: Foto1`} />
 
 USA LISTAS cuando:
+
 - Colección de elementos similares
 - El orden importa
 - Acceso por posición (índice)
 - Ejemplos: lista de seguidores, posts, comentarios
 
 USA OBJETOS cuando:
+
 - Datos con nombres específicos
 - Representar una entidad
 - Acceso por nombre de propiedad
@@ -186,15 +188,15 @@ mostrar "Código postal: " + perfil.direccion.codigoPostal // Código postal: 28
 mostrar "" //
 mostrar "=== PRODUCTO CON ESPECIFICACIONES ===" // === PRODUCTO CON ESPECIFICACIONES ===
 variable producto = {
-    nombre: "Laptop",
-    precio: 50000,
-    especificaciones: {
-        procesador: "Intel i7",
-        ram: "16GB",
-        almacenamiento: "512GB SSD",
-        pantalla: "15.6 pulgadas"
-    },
-    stock: 10
+nombre: "Laptop",
+precio: 50000,
+especificaciones: {
+procesador: "Intel i7",
+ram: "16GB",
+almacenamiento: "512GB SSD",
+pantalla: "15.6 pulgadas"
+},
+stock: 10
 }
 
 mostrar "Producto: " + producto.nombre // Producto: Laptop
@@ -235,25 +237,25 @@ El patrón más común: una lista de objetos. Como tu feed de Instagram: cada po
 
 mostrar "=== TODOS LOS USUARIOS ===" // === TODOS LOS USUARIOS ===
 usuarios.recorrer(funcion(usuario, i) {
-    mostrar (i + 1).aTexto() + ". " + usuario.nombre + " (" + usuario.usuario + ")" // 1. Ana García (@ana), 2. Pedro López (@pedro), 3. Luis Martínez (@luis)
-    mostrar "   Seguidores: " + texto(usuario.seguidores) //    Seguidores: 2500,    Seguidores: 800,    Seguidores: 3200
+mostrar (i + 1).aTexto() + ". " + usuario.nombre + " (" + usuario.usuario + ")" // 1. Ana García (@ana), 2. Pedro López (@pedro), 3. Luis Martínez (@luis)
+mostrar " Seguidores: " + texto(usuario.seguidores) // Seguidores: 2500, Seguidores: 800, Seguidores: 3200
 })
 
 mostrar "" //
 mostrar "=== VERIFICADOS ===" // === VERIFICADOS ===
 variable verificados = usuarios.filtrar(funcion(u) {
-    retornar u.verificado
+retornar u.verificado
 })
 mostrar "Usuarios verificados: " + texto(verificados.longitud()) // Usuarios verificados: 2
 
 mostrar "" //
 mostrar "=== INFLUENCERS (>1000) ===" // === INFLUENCERS (>1000) ===
 variable influencers = usuarios.filtrar(funcion(u) {
-    retornar u.seguidores > 1000
+retornar u.seguidores > 1000
 })
 
 influencers.recorrer(funcion(inf) {
-    mostrar inf.nombre + ": " + texto(inf.seguidores) + " seguidores" // Ana García: 2500 seguidores, Luis Martínez: 3200 seguidores
+mostrar inf.nombre + ": " + texto(inf.seguidores) + " seguidores" // Ana García: 2500 seguidores, Luis Martínez: 3200 seguidores
 })`} />
 
 - Lista de objetos: patrón fundamental
@@ -275,18 +277,18 @@ Como cuando compartes un perfil o envías tus datos a una función. Los objetos 
 }
 
 variable ana = {
-    nombre: "Ana García",
-    usuario: "@ana",
-    seguidores: 2500,
-    verificado: verdadero
+nombre: "Ana García",
+usuario: "@ana",
+seguidores: 2500,
+verificado: verdadero
 }
 
 mostrarPerfil(ana) // === PERFIL ===, Nombre: Ana García, Usuario: @ana, Seguidores: 2500, Verificado: ✓
 
 mostrar "" //
 funcion agregarSeguidores(usuario, cantidad) {
-    usuario.seguidores = usuario.seguidores + cantidad
-    mostrar usuario.nombre + " ahora tiene " + texto(usuario.seguidores) + " seguidores"
+usuario.seguidores = usuario.seguidores + cantidad
+mostrar usuario.nombre + " ahora tiene " + texto(usuario.seguidores) + " seguidores"
 }
 
 agregarSeguidores(ana, 100) // Ana García ahora tiene 2600 seguidores
@@ -294,13 +296,13 @@ agregarSeguidores(ana, 50) // Ana García ahora tiene 2650 seguidores
 
 mostrar "" //
 funcion crearPerfil(nombre, usuario) {
-    retornar {
-        nombre: nombre,
-        usuario: usuario,
-        seguidores: 0,
-        seguidos: 0,
-        verificado: falso
-    }
+retornar {
+nombre: nombre,
+usuario: usuario,
+seguidores: 0,
+seguidos: 0,
+verificado: falso
+}
 }
 
 variable nuevoPerfil = crearPerfil("Pedro López", "@pedro")
@@ -324,24 +326,24 @@ Combina objetos con métodos de listas para operaciones poderosas: extraer nombr
 
 mostrar "=== NOMBRES DE PRODUCTOS ===" // === NOMBRES DE PRODUCTOS ===
 variable nombres = productos.mapear(funcion(p) {
-    retornar p.nombre
+retornar p.nombre
 })
 mostrar nombres.unir(", ") // Mouse, Teclado, Monitor, WebCam
 
 mostrar "" //
 mostrar "=== PRODUCTOS DISPONIBLES (stock > 10) ===" // === PRODUCTOS DISPONIBLES (stock > 10) ===
 variable disponibles = productos.filtrar(funcion(p) {
-    retornar p.stock > 10
+retornar p.stock > 10
 })
 
 disponibles.recorrer(funcion(p) {
-    mostrar p.nombre + ": " + texto(p.stock) + " unidades" // Mouse: 25 unidades, Teclado: 15 unidades, WebCam: 12 unidades
+mostrar p.nombre + ": " + texto(p.stock) + " unidades" // Mouse: 25 unidades, Teclado: 15 unidades, WebCam: 12 unidades
 })
 
 mostrar "" //
 mostrar "=== VALOR TOTAL INVENTARIO ===" // === VALOR TOTAL INVENTARIO ===
 variable valorTotal = productos.reducir(funcion(acc, p) {
-    retornar acc + (p.precio * p.stock)
+retornar acc + (p.precio \* p.stock)
 }, 0)
 
 mostrar "Valor total: $" + texto(valorTotal) // Valor total: $24950
@@ -349,25 +351,27 @@ mostrar "Valor total: $" + texto(valorTotal) // Valor total: $24950
 mostrar "" //
 mostrar "=== APLICAR DESCUENTO 10% ===" // === APLICAR DESCUENTO 10% ===
 variable conDescuento = productos.mapear(funcion(p) {
-    retornar {
-        nombre: p.nombre,
-        precioOriginal: p.precio,
-        precioFinal: p.precio * 0.9,
-        stock: p.stock
-    }
+retornar {
+nombre: p.nombre,
+precioOriginal: p.precio,
+precioFinal: p.precio \* 0.9,
+stock: p.stock
+}
 })
 
 conDescuento.recorrer(funcion(p) {
-    mostrar p.nombre + ": $" + texto(p.precioOriginal) + " → $" + texto(p.precioFinal) // Mouse: $150 → $135, Teclado: $300 → $270, Monitor: $2000 → $1800, WebCam: $500 → $450
+mostrar p.nombre + ": $" + texto(p.precioOriginal) + " → $" + texto(p.precioFinal) // Mouse: $150 → $135, Teclado: $300 → $270, Monitor: $2000 → $1800, WebCam: $500 → $450
 })`} />
 
 Operaciones comunes con lista de objetos:
+
 - .mapear(p => p.nombre) → lista de solo nombres
 - .filtrar(p => p.stock > 10) → solo productos con stock
 - .reducir((acc, p) => acc + p.precio, 0) → suma total
 - Combina filtrar → mapear → reducir para pipelines poderosos
 
 Resumen de objetos:
+
 - Crear: objeto con clave: valor
 - Acceder: objeto.propiedad
 - Modificar: objeto.propiedad = valor

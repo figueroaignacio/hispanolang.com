@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Card from "@/components/ui/Card";
+import Link from 'next/link';
+import Card from '@/components/ui/Card';
 
 interface Lesson {
   id: string;
@@ -17,9 +17,9 @@ interface LessonCardProps {
 
 export default function LessonCard({ lesson }: LessonCardProps) {
   const difficultyColors = {
-    Principiante: "bg-green-900/40 border border-green-700/50 text-green-300",
-    Intermedio: "bg-yellow-900/40 border border-yellow-700/50 text-yellow-300",
-    Avanzado: "bg-red-900/40 border border-red-700/50 text-red-300",
+    Principiante: 'bg-green-900/40 border border-green-700/50 text-green-300',
+    Intermedio: 'bg-yellow-900/40 border border-yellow-700/50 text-yellow-300',
+    Avanzado: 'bg-red-900/40 border border-red-700/50 text-red-300',
   };
 
   return (
@@ -34,16 +34,12 @@ export default function LessonCard({ lesson }: LessonCardProps) {
           {lesson.title}
         </h3>
 
-        <p className="text-slate-300 mb-4 leading-relaxed">
-          {lesson.description}
-        </p>
+        <p className="text-slate-300 mb-4 leading-relaxed">{lesson.description}</p>
 
         <div className="flex items-center justify-between">
           <span
             className={`px-3 py-1 rounded-full text-sm font-medium ${
-              difficultyColors[
-                lesson.difficulty as keyof typeof difficultyColors
-              ]
+              difficultyColors[lesson.difficulty as keyof typeof difficultyColors]
             }`}
           >
             {lesson.difficulty}

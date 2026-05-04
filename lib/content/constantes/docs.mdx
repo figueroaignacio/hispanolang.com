@@ -17,9 +17,11 @@ mostrar "Límite de caracteres: " + LIMITE_CARACTERES
 mostrar "Precio verificación: $" + PRECIO_VERIFICACION
 mostrar "Plataforma: " + NOMBRE_PLATAFORMA`} />
 
-<Output text={`Límite de caracteres: 280
+<Output
+  text={`Límite de caracteres: 280
 Precio verificación: $8
-Plataforma: Twitter/X`} />
+Plataforma: Twitter/X`}
+/>
 
 - Las constantes se escriben con MAYÚSCULAS_Y_GUIONES por convención
 - Se usan para valores que NO deben cambiar: límites, precios, configuración
@@ -38,8 +40,10 @@ constante MAX_IMAGENES_TWEET = 4
 mostrar "Un tweet puede tener máximo " + LIMITE_CARACTERES + " caracteres"
 mostrar "Puedes adjuntar hasta " + MAX_IMAGENES_TWEET + " imágenes"`} />
 
-<Output text={`Un tweet puede tener máximo 280 caracteres
-Puedes adjuntar hasta 4 imágenes`} />
+<Output
+  text={`Un tweet puede tener máximo 280 caracteres
+Puedes adjuntar hasta 4 imágenes`}
+/>
 
 - Usa `constante` en lugar de `variable` para crearlas
 - Por convención, los nombres van en MAYÚSCULAS (así es fácil identificarlas)
@@ -62,10 +66,12 @@ mostrar "Escritos ahora: " + caracteresEscritos
 caracteresEscritos = 150
 mostrar "Escritos ahora: " + caracteresEscritos`} />
 
-<Output text={`Límite: 280
+<Output
+  text={`Límite: 280
 Escritos: 0
 Escritos ahora: 50
-Escritos ahora: 150`} />
+Escritos ahora: 150`}
+/>
 
 - `LIMITE_CARACTERES` es constante: Twitter no lo cambia mientras escribís
 - `caracteresEscritos` es variable: cambia con cada letra que escribís
@@ -80,8 +86,10 @@ mostrar LIMITE_CARACTERES
 
 LIMITE_CARACTERES = 500`} />
 
-<Output text={`280
-Error: No puedes reasignar una constante`} />
+<Output
+  text={`280
+Error: No puedes reasignar una constante`}
+/>
 
 - Intentar cambiar una constante causa un error inmediato
 - Esto es intencional: te protege de modificar accidentalmente valores importantes
@@ -106,10 +114,12 @@ mostrar "Límite de biografía: " + LIMITE_BIO + " caracteres"
 mostrar "Usuarios activos hoy: " + usuariosActivos
 mostrar "Tweets publicados hoy: " + tweetsHoy`} />
 
-<Output text={`App: MiRedSocial v1.0.0
+<Output
+  text={`App: MiRedSocial v1.0.0
 Límite de biografía: 160 caracteres
 Usuarios activos hoy: 1250
-Tweets publicados hoy: 450`} />
+Tweets publicados hoy: 450`}
+/>
 
 - Usa constantes para: nombre de app, versión, límites del sistema, precios, configuración
 - Usa variables para: contadores, estadísticas, datos de usuarios, estados temporales

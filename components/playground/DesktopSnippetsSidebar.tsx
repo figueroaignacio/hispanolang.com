@@ -1,4 +1,4 @@
-import CodeSnippets from "./CodeSnippets";
+import CodeSnippets from './CodeSnippets';
 
 interface DesktopSnippetsSidebarProps {
   isCollapsed: boolean;
@@ -16,7 +16,7 @@ export default function DesktopSnippetsSidebar({
       {/* Sidebar */}
       <div
         className={`hidden lg:block flex-shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${
-          isCollapsed ? "w-0" : "w-80 mr-4"
+          isCollapsed ? 'w-0' : 'w-80 mr-4'
         }`}
       >
         <div className="h-[calc(100vh-280px)] min-h-[500px] w-80">
@@ -41,12 +41,7 @@ export default function DesktopSnippetsSidebar({
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2.5}
-              d="M9 5l7 7-7 7"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
           </svg>
         </button>
       )}

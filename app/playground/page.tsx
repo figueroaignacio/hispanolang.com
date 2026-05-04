@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import PlaygroundHeader from "@/components/playground/PlaygroundHeader";
-import MobileSnippetsOverlay from "@/components/playground/MobileSnippetsOverlay";
-import DesktopSnippetsSidebar from "@/components/playground/DesktopSnippetsSidebar";
-import PlaygroundLayout from "@/components/playground/PlaygroundLayout";
-import { usePlaygroundCode } from "@/hooks/usePlaygroundCode";
+import { useState } from 'react';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import PlaygroundHeader from '@/components/playground/PlaygroundHeader';
+import MobileSnippetsOverlay from '@/components/playground/MobileSnippetsOverlay';
+import DesktopSnippetsSidebar from '@/components/playground/DesktopSnippetsSidebar';
+import PlaygroundLayout from '@/components/playground/PlaygroundLayout';
+import { usePlaygroundCode } from '@/hooks/usePlaygroundCode';
 
 export default function PlaygroundPage() {
   const [showSnippets, setShowSnippets] = useState(false);
@@ -44,9 +44,7 @@ export default function PlaygroundPage() {
         <div className="flex mb-6">
           <DesktopSnippetsSidebar
             isCollapsed={isSnippetsCollapsed}
-            onToggleCollapse={() =>
-              setIsSnippetsCollapsed(!isSnippetsCollapsed)
-            }
+            onToggleCollapse={() => setIsSnippetsCollapsed(!isSnippetsCollapsed)}
             onSnippetSelect={handleSnippetSelect}
           />
 

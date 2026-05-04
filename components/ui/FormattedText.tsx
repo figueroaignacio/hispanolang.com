@@ -9,7 +9,7 @@ function formatTextWithMarkup(text: string) {
   const boldParts = text.split(/(\*\*.*?\*\*)/g);
 
   return boldParts.map((part, boldIndex) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
+    if (part.startsWith('**') && part.endsWith('**')) {
       // This is bold text, now check for code within it
       const boldContent = part.slice(2, -2);
       const codeParts = boldContent.split(/(`.*?`)/g);
@@ -17,7 +17,7 @@ function formatTextWithMarkup(text: string) {
       return (
         <strong key={boldIndex} className="font-semibold">
           {codeParts.map((codePart, codeIndex) => {
-            if (codePart.startsWith("`") && codePart.endsWith("`")) {
+            if (codePart.startsWith('`') && codePart.endsWith('`')) {
               return (
                 <code
                   key={codeIndex}
@@ -37,7 +37,7 @@ function formatTextWithMarkup(text: string) {
     // This is regular text, check for code markers
     const codeParts = part.split(/(`.*?`)/g);
     return codeParts.map((codePart, codeIndex) => {
-      if (codePart.startsWith("`") && codePart.endsWith("`")) {
+      if (codePart.startsWith('`') && codePart.endsWith('`')) {
         return (
           <code
             key={`${boldIndex}-${codeIndex}`}
@@ -53,21 +53,16 @@ function formatTextWithMarkup(text: string) {
   });
 }
 
-export default function FormattedText({
-  text,
-  className = "",
-}: FormattedTextProps) {
+export default function FormattedText({ text, className = '' }: FormattedTextProps) {
   return (
     <div className={className}>
-      {text.split("\n").map((line, index) => {
+      {text.split('\n').map((line, index) => {
         // Handle bullet points
-        if (line.trim().startsWith("•")) {
+        if (line.trim().startsWith('•')) {
           return (
             <div key={index} className="flex items-center mb-2">
               <span className="text-slate-400 mr-2 mt-1">•</span>
-              <span>
-                {formatTextWithMarkup(line.trim().substring(1).trim())}
-              </span>
+              <span>{formatTextWithMarkup(line.trim().substring(1).trim())}</span>
             </div>
           );
         }

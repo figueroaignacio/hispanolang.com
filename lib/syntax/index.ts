@@ -26,13 +26,7 @@ export {
   KEYWORDS,
 } from './highlighter';
 
-export type {
-  Token,
-  TokenType,
-  Theme,
-  HighlightedSegment,
-  HighlightedLine,
-} from './highlighter';
+export type { Token, TokenType, Theme, HighlightedSegment, HighlightedLine } from './highlighter';
 
 export { TOKEN_PATTERNS } from './tokens';
 export { darkTheme } from './theme';

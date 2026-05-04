@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 interface NavSection {
   id: string;
@@ -30,7 +30,7 @@ export default function DocNavMobile({
     onSectionChange(sectionId);
     setIsMenuOpen(false);
     // Scroll hacia arriba con animación suave
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const mobileMenu = (
@@ -41,12 +41,7 @@ export default function DocNavMobile({
         className="lg:hidden fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 via-purple-600 to-pink-500 text-white shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center"
         aria-label="Abrir menú de contenido"
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -81,12 +76,7 @@ export default function DocNavMobile({
                 className="text-slate-400 hover:text-slate-200 transition-colors"
                 aria-label="Cerrar menú"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -106,8 +96,8 @@ export default function DocNavMobile({
                       onClick={() => handleSectionClick(section.id)}
                       className={`w-full text-left px-4 py-3 rounded-xl transition-all text-lg font-medium ${
                         activeSection === section.id
-                          ? "bg-gradient-to-r from-purple-900/50 to-pink-900/50 text-purple-300 border-l-4 border-purple-500"
-                          : "text-slate-300 hover:bg-slate-800"
+                          ? 'bg-gradient-to-r from-purple-900/50 to-pink-900/50 text-purple-300 border-l-4 border-purple-500'
+                          : 'text-slate-300 hover:bg-slate-800'
                       }`}
                     >
                       <div className="flex items-center gap-3">

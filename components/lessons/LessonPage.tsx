@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import Section from "@/components/ui/Section";
-import Card from "@/components/ui/Card";
-import Button from "@/components/ui/Button";
-import FormattedText from "@/components/ui/FormattedText";
-import CodeEditor from "@/components/lessons/CodeEditor";
-import LessonProgress from "@/components/lessons/LessonProgress";
-import LessonsSidebar from "@/components/lessons/LessonsSidebar";
-import CodeBlock from "@/components/ui/CodeBlock";
-import { useSpeech } from "@/hooks/useSpeech";
-import { LessonStep, LessonNav } from "@/lib/lessons/types";
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Section from '@/components/ui/Section';
+import Card from '@/components/ui/Card';
+import Button from '@/components/ui/Button';
+import FormattedText from '@/components/ui/FormattedText';
+import CodeEditor from '@/components/lessons/CodeEditor';
+import LessonProgress from '@/components/lessons/LessonProgress';
+import LessonsSidebar from '@/components/lessons/LessonsSidebar';
+import CodeBlock from '@/components/ui/CodeBlock';
+import { useSpeech } from '@/hooks/useSpeech';
+import { LessonStep, LessonNav } from '@/lib/lessons/types';
 
 interface LessonPageProps {
   badge: { emoji: string; text: string };
@@ -38,8 +38,7 @@ export default function LessonPage({
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { speak, stop, pause, resume, isSpeaking, isPaused, isSupported } =
-    useSpeech();
+  const { speak, stop, pause, resume, isSpeaking, isPaused, isSupported } = useSpeech();
 
   const handlePlayAudio = () => {
     if (isSpeaking && !isPaused) {
@@ -79,8 +78,7 @@ export default function LessonPage({
     }
   };
 
-  const progress =
-    currentStep === 0 ? 1 : ((currentStep + 1) / steps.length) * 100;
+  const progress = currentStep === 0 ? 1 : ((currentStep + 1) / steps.length) * 100;
 
   const currentStepData = steps[currentStep];
 
@@ -89,10 +87,7 @@ export default function LessonPage({
       <Header />
 
       {/* Sidebar */}
-      <LessonsSidebar
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
+      <LessonsSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <main className="relative z-10 pt-20">
         <Section
@@ -114,9 +109,7 @@ export default function LessonPage({
             <div className="mb-12 mt-10">
               {/* Título con botón de audio */}
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-3xl font-bold text-slate-100">
-                  {currentStepData.title}
-                </h3>
+                <h3 className="text-3xl font-bold text-slate-100">{currentStepData.title}</h3>
                 {isSupported && (
                   <div className="flex items-center gap-2">
                     <button
@@ -124,35 +117,23 @@ export default function LessonPage({
                       className="flex items-center gap-2 px-3 py-2 bg-slate-700/50 hover:bg-slate-600/50 border border-slate-600 rounded-lg text-slate-300 hover:text-slate-100 text-sm transition-colors"
                       title={
                         isSpeaking && !isPaused
-                          ? "Pausar"
+                          ? 'Pausar'
                           : isPaused
-                          ? "Continuar"
-                          : "Escuchar lección"
+                            ? 'Continuar'
+                            : 'Escuchar lección'
                       }
                     >
                       {isSpeaking && !isPaused ? (
-                        <svg
-                          className="w-4 h-4"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                         </svg>
                       ) : (
-                        <svg
-                          className="w-4 h-4"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M8 5v14l11-7z" />
                         </svg>
                       )}
                       <span className="hidden sm:inline">
-                        {isSpeaking && !isPaused
-                          ? "Pausar"
-                          : isPaused
-                          ? "Continuar"
-                          : "Escuchar"}
+                        {isSpeaking && !isPaused ? 'Pausar' : isPaused ? 'Continuar' : 'Escuchar'}
                       </span>
                     </button>
                     {isSpeaking && (
@@ -161,11 +142,7 @@ export default function LessonPage({
                         className="flex items-center gap-2 px-3 py-2 bg-red-900/30 hover:bg-red-800/40 border border-red-700/50 rounded-lg text-red-400 hover:text-red-300 text-sm transition-colors"
                         title="Detener"
                       >
-                        <svg
-                          className="w-4 h-4"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M6 6h12v12H6z" />
                         </svg>
                       </button>
@@ -196,11 +173,11 @@ export default function LessonPage({
               {currentStepData.summary && (
                 <div className="bg-green-900/30 border border-green-700/50 rounded-lg p-4">
                   <h4 className="font-semibold text-green-300 mb-2">
-                    {currentStepData.summary.split("\n")[0]}
+                    {currentStepData.summary.split('\n')[0]}
                   </h4>
                   <div className="text-green-400 text-sm">
                     {currentStepData.summary
-                      .split("\n")
+                      .split('\n')
                       .slice(1)
                       .map((line, index) => (
                         <p key={index} className="mb-1">
@@ -214,28 +191,18 @@ export default function LessonPage({
 
             {/* BLOQUE 2: PRACTICAR */}
             {currentStepData.challenge && (
-              <Card
-                variant="glass"
-                className="bg-slate-800/80 backdrop-blur-sm mb-8"
-              >
+              <Card variant="glass" className="bg-slate-800/80 backdrop-blur-sm mb-8">
                 <div>
                   {/* Header */}
                   <div className="flex items-center gap-2 text-sm text-purple-400 mb-4">
                     <span>🧩</span>
-                    <span className="uppercase tracking-wide font-medium">
-                      Practicar
-                    </span>
+                    <span className="uppercase tracking-wide font-medium">Practicar</span>
                   </div>
 
                   {/* Desafío */}
                   <div className="bg-purple-900/20 border border-purple-600/40 rounded-lg p-4 mb-6">
-                    <h4 className="font-semibold text-purple-300 mb-2">
-                      Desafío
-                    </h4>
-                    <FormattedText
-                      text={currentStepData.challenge}
-                      className="text-slate-300"
-                    />
+                    <h4 className="font-semibold text-purple-300 mb-2">Desafío</h4>
+                    <FormattedText text={currentStepData.challenge} className="text-slate-300" />
                   </div>
 
                   {/* Editor + Consola */}
@@ -262,11 +229,7 @@ export default function LessonPage({
                   ← {prev.title}
                 </Button>
               ) : (
-                <Button
-                  variant="outline"
-                  disabled
-                  className="opacity-50 cursor-not-allowed"
-                >
+                <Button variant="outline" disabled className="opacity-50 cursor-not-allowed">
                   ← Anterior
                 </Button>
               )}
@@ -282,10 +245,7 @@ export default function LessonPage({
                   {next.title} →
                 </Button>
               ) : (
-                <Button
-                  variant="primary"
-                  onClick={() => router.push("/lecciones")}
-                >
+                <Button variant="primary" onClick={() => router.push('/lecciones')}>
                   Finalizar ✓
                 </Button>
               )}
@@ -301,12 +261,7 @@ export default function LessonPage({
         onClick={() => setSidebarOpen(true)}
         className="fixed bottom-6 right-6 z-30 flex items-center gap-2 px-3 py-2 bg-slate-800/90 hover:bg-slate-700 border border-slate-600 rounded-lg text-slate-400 hover:text-slate-200 text-sm transition-colors backdrop-blur-sm"
       >
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"

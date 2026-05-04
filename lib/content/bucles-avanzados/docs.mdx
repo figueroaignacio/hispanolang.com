@@ -14,14 +14,16 @@ Puedes poner un bucle dentro de otro bucle. Como tener múltiples playlists y re
     }
 
     mostrar "" // (línea vacía)
+
 }
 
 para (variable album = 1; album <= 2; album++) {
-    mostrar "ÁLBUM " + album // ÁLBUM 1, ÁLBUM 2
+mostrar "ÁLBUM " + album // ÁLBUM 1, ÁLBUM 2
 
     para (variable track = 1; track <= 3; track++) {
         mostrar "  Track " + track + " del álbum " + album // Track 1 del álbum 1, Track 2 del álbum 1, ...
     }
+
 }`} />
 
 - Bucle externo: se ejecuta pocas veces (playlists)
@@ -38,7 +40,7 @@ Los bucles anidados son perfectos para crear estructuras en forma de tabla.
 mostrar "" // (línea vacía)
 
 para (variable fila = 1; fila <= 5; fila++) {
-    variable linea = ""
+variable linea = ""
 
     para (variable columna = 1; columna <= 5; columna++) {
         variable producto = fila * columna
@@ -46,6 +48,7 @@ para (variable fila = 1; fila <= 5; fila++) {
     }
 
     mostrar linea // 1 2 3 4 5, 2 4 6 8 10, 3 6 9 12 15, ...
+
 }
 
 mostrar "" // (línea vacía)
@@ -53,12 +56,13 @@ mostrar "=== HORARIO SEMANAL ===" // === HORARIO SEMANAL ===
 mostrar "" // (línea vacía)
 
 para (variable dia = 1; dia <= 3; dia++) {
-    mostrar "Día " + dia + ":" // Día 1:, Día 2:, Día 3:
+mostrar "Día " + dia + ":" // Día 1:, Día 2:, Día 3:
 
     para (variable hora = 9; hora <= 11; hora++) {
         mostrar "  " + hora + ":00 - Clase" // 9:00 - Clase, 10:00 - Clase, 11:00 - Clase
     }
     mostrar "" // (línea vacía)
+
 }`} />
 
 - El bucle externo controla las filas
@@ -73,39 +77,42 @@ Los bucles pueden crear patrones visuales interesantes.
 <Code code={`mostrar "=== TRIÁNGULO ===" // === TRIÁNGULO ===
 
 para (variable fila = 1; fila <= 5; fila++) {
-    variable estrellas = ""
+variable estrellas = ""
 
     para (variable col = 1; col <= fila; col++) {
         estrellas = estrellas + "* "
     }
 
     mostrar estrellas // *, * *, * * *, * * * *, * * * * *
+
 }
 
 mostrar "" // (línea vacía)
 mostrar "=== TRIÁNGULO INVERTIDO ===" // === TRIÁNGULO INVERTIDO ===
 
 para (variable fila = 5; fila >= 1; fila--) {
-    variable estrellas = ""
+variable estrellas = ""
 
     para (variable col = 1; col <= fila; col++) {
         estrellas = estrellas + "* "
     }
 
     mostrar estrellas // * * * * *, * * * *, * * *, * *, *
+
 }
 
 mostrar "" // (línea vacía)
 mostrar "=== CUADRADO ===" // === CUADRADO ===
 
 para (variable fila = 1; fila <= 4; fila++) {
-    variable linea = ""
+variable linea = ""
 
     para (variable col = 1; col <= 4; col++) {
         linea = linea + "# "
     }
 
     mostrar linea // # # # # (4 veces)
+
 }`} />
 
 - El número de estrellas depende de la fila
@@ -123,9 +130,9 @@ variable trackObjetivo = 3
 variable encontrado = falso
 
 para (variable album = 1; album <= 3; album++) {
-    si encontrado {
-        romper
-    }
+si encontrado {
+romper
+}
 
     para (variable track = 1; track <= 5; track++) {
         si album == albumObjetivo y track == trackObjetivo {
@@ -135,10 +142,11 @@ para (variable album = 1; album <= 3; album++) {
         }
         mostrar "Buscando en Álbum " + album + ", Track " + track // Buscando en Álbum 1, Track 1, ...
     }
+
 }
 
 si !encontrado {
-    mostrar "No encontrado"
+mostrar "No encontrado"
 }`} />
 
 - romper solo sale del bucle más interno
@@ -155,7 +163,7 @@ variable contador = 0
 variable maximo = 0
 
 para (variable i = 1; i <= 10; i++) {
-    variable numero = i * 5
+variable numero = i \* 5
 
     sumaTotal = sumaTotal + numero
     contador++
@@ -165,6 +173,7 @@ para (variable i = 1; i <= 10; i++) {
     }
 
     mostrar "Número: " + numero + " | Suma: " + sumaTotal // Número: 5 | Suma: 5, Número: 10 | Suma: 15, ...
+
 }
 
 mostrar "" // (línea vacía)
@@ -189,14 +198,15 @@ Generar todas las combinaciones posibles de elementos.
 variable combinaciones = 0
 
 para (variable dado1 = 1; dado1 <= 6; dado1++) {
-    para (variable dado2 = 1; dado2 <= 6; dado2++) {
-        variable suma = dado1 + dado2
+para (variable dado2 = 1; dado2 <= 6; dado2++) {
+variable suma = dado1 + dado2
 
         si suma == 7 {
             mostrar "Dado 1: " + dado1 + " + Dado 2: " + dado2 + " = 7" // Dado 1: 1 + Dado 2: 6 = 7, ...
             combinaciones++
         }
     }
+
 }
 
 mostrar "" // (línea vacía)

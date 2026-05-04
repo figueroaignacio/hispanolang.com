@@ -21,9 +21,9 @@ export interface ValidationResult {
 
 function parsePattern(pattern: string): RegExp | string {
   // Si empieza con "/" es un regex
-  if (pattern.startsWith("/")) {
+  if (pattern.startsWith('/')) {
     // Extraer el patrón y las flags
-    const lastSlash = pattern.lastIndexOf("/");
+    const lastSlash = pattern.lastIndexOf('/');
     if (lastSlash > 0) {
       const regexBody = pattern.slice(1, lastSlash);
       const flags = pattern.slice(lastSlash + 1);
@@ -42,9 +42,9 @@ function matchesPattern(text: string, pattern: string): boolean {
 }
 
 function patternToString(pattern: string): string {
-  if (pattern.startsWith("/")) {
+  if (pattern.startsWith('/')) {
     // Mostrar una versión más legible del regex
-    const lastSlash = pattern.lastIndexOf("/");
+    const lastSlash = pattern.lastIndexOf('/');
     return pattern.slice(1, lastSlash > 0 ? lastSlash : undefined);
   }
   return pattern;
@@ -61,19 +61,19 @@ export function validateExercise(
   if (!validation) {
     return {
       isValid: execution.success,
-      passed: execution.success ? ["Código ejecutado correctamente"] : [],
-      failed: execution.success ? [] : ["Error de ejecución"],
+      passed: execution.success ? ['Código ejecutado correctamente'] : [],
+      failed: execution.success ? [] : ['Error de ejecución'],
     };
   }
 
   // Verificar que no haya errores de ejecución
   if (!execution.success) {
-    failed.push("El código debe ejecutarse sin errores");
+    failed.push('El código debe ejecutarse sin errores');
     return { isValid: false, passed, failed };
   }
-  passed.push("Sin errores de ejecución");
+  passed.push('Sin errores de ejecución');
 
-  const outputText = execution.output.join("\n");
+  const outputText = execution.output.join('\n');
 
   // Verificar outputs esperados
   if (validation.expectedOutputs && validation.expectedOutputs.length > 0) {

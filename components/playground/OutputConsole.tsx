@@ -1,20 +1,15 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import { FiTrash2 } from "react-icons/fi";
+import { useState, useEffect, useRef } from 'react';
+import { FiTrash2 } from 'react-icons/fi';
 
 interface OutputConsoleProps {
   output: string;
   isRunning: boolean;
 }
 
-export default function OutputConsole({
-  output,
-  isRunning,
-}: OutputConsoleProps) {
-  const [history, setHistory] = useState<
-    Array<{ timestamp: Date; output: string }>
-  >([]);
+export default function OutputConsole({ output, isRunning }: OutputConsoleProps) {
+  const [history, setHistory] = useState<Array<{ timestamp: Date; output: string }>>([]);
   const consoleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,10 +30,10 @@ export default function OutputConsole({
   };
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString("es-ES", {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
+    return date.toLocaleTimeString('es-ES', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
     });
   };
 
@@ -49,7 +44,7 @@ export default function OutputConsole({
         <div className="flex items-center space-x-2">
           <span className="text-[#cccccc] font-semibold text-sm">Consola</span>
           <span className="text-xs text-[#858585]">
-            {history.length} ejecucion{history.length !== 1 ? "es" : ""}
+            {history.length} ejecucion{history.length !== 1 ? 'es' : ''}
           </span>
         </div>
         <button
@@ -69,29 +64,19 @@ export default function OutputConsole({
         style={{ fontVariantLigatures: 'none' }}
       >
         {history.length === 0 && !output ? (
-          <div className="text-[#858585] text-sm">
-            Ejecuta tu código para ver el resultado...
-          </div>
+          <div className="text-[#858585] text-sm">Ejecuta tu código para ver el resultado...</div>
         ) : (
           <>
             {history.map((entry, index) => (
               <div key={index} className="mb-3 last:mb-0">
-                <div className="text-[#6a6a6a] text-[10px] mb-1">
-                  {formatTime(entry.timestamp)}
-                </div>
-                <pre className="text-[#d4d4d4] whitespace-pre-wrap break-words">
-                  {entry.output}
-                </pre>
+                <div className="text-[#6a6a6a] text-[10px] mb-1">{formatTime(entry.timestamp)}</div>
+                <pre className="text-[#d4d4d4] whitespace-pre-wrap break-words">{entry.output}</pre>
                 {index < history.length - 1 && (
                   <div className="border-b border-[#3e3e42] my-2"></div>
                 )}
               </div>
             ))}
-            {isRunning && (
-              <div className="text-[#c586c0] animate-pulse">
-                Ejecutando código...
-              </div>
-            )}
+            {isRunning && <div className="text-[#c586c0] animate-pulse">Ejecutando código...</div>}
           </>
         )}
       </div>

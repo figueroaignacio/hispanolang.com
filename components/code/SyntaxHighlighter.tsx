@@ -51,10 +51,7 @@ export const SyntaxHighlighter = memo(function SyntaxHighlighter({
   const lines = useMemo(() => code.split('\n'), [code]);
 
   return (
-    <code
-      className={`font-mono ${className}`}
-      style={{ fontVariantLigatures: 'none' }}
-    >
+    <code className={`font-mono ${className}`} style={{ fontVariantLigatures: 'none' }}>
       {lines.map((line, index) => (
         <span key={index} className="block">
           <HighlightedLineComponent line={line} />
@@ -75,10 +72,7 @@ export const InlineSyntaxHighlighter = memo(function InlineSyntaxHighlighter({
   const segments = useMemo(() => highlightLine(code), [code]);
 
   return (
-    <code
-      className={`font-mono ${className}`}
-      style={{ fontVariantLigatures: 'none' }}
-    >
+    <code className={`font-mono ${className}`} style={{ fontVariantLigatures: 'none' }}>
       {segments.map((segment, index) => (
         <HighlightedText key={index} segment={segment} />
       ))}

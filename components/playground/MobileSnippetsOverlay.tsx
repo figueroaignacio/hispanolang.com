@@ -1,5 +1,5 @@
-import { FiX } from "react-icons/fi";
-import CodeSnippets from "./CodeSnippets";
+import { FiX } from 'react-icons/fi';
+import CodeSnippets from './CodeSnippets';
 
 interface MobileSnippetsOverlayProps {
   isOpen: boolean;
@@ -20,13 +20,13 @@ export default function MobileSnippetsOverlay({
   return (
     <div
       className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
-        isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
       <div className="absolute inset-0 bg-black/70" onClick={onClose}></div>
       <div
         className={`absolute right-0 top-0 bottom-0 w-[85%] max-w-sm bg-slate-900 shadow-xl transition-transform duration-300 ease-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         onClick={(e) => e.stopPropagation()}
       >

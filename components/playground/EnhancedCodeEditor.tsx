@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useRef, useEffect, useCallback, useMemo } from "react";
-import { FiTrash2 } from "react-icons/fi";
-import { highlightLine } from "@/lib/syntax";
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import { FiTrash2 } from 'react-icons/fi';
+import { highlightLine } from '@/lib/syntax';
 
 interface EnhancedCodeEditorProps {
   code: string;
@@ -48,7 +48,7 @@ export default function EnhancedCodeEditor({
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [scrollTop, setScrollTop] = useState<number>(0);
 
-  const lines = useMemo(() => code.split("\n"), [code]);
+  const lines = useMemo(() => code.split('\n'), [code]);
 
   const measureLineHeights = useCallback(() => {
     if (!measureRef.current || !textareaRef.current) return;
@@ -102,23 +102,23 @@ export default function EnhancedCodeEditor({
     if (textareaRef.current) {
       const cursorPosition = textareaRef.current.selectionStart;
       const textBeforeCursor = textareaRef.current.value.substring(0, cursorPosition);
-      const lineNumber = textBeforeCursor.split("\n").length;
+      const lineNumber = textBeforeCursor.split('\n').length;
       setCurrentLine(lineNumber);
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
       e.preventDefault();
       onRun();
     }
 
-    if (e.key === "Tab") {
+    if (e.key === 'Tab') {
       e.preventDefault();
       const target = e.target as HTMLTextAreaElement;
       const start = target.selectionStart;
       const end = target.selectionEnd;
-      const newCode = code.substring(0, start) + "    " + code.substring(end);
+      const newCode = code.substring(0, start) + '    ' + code.substring(end);
       onChange(newCode);
 
       setTimeout(() => {
@@ -128,7 +128,7 @@ export default function EnhancedCodeEditor({
   };
 
   const handleClear = () => {
-    onChange("");
+    onChange('');
   };
 
   return (
@@ -153,9 +153,7 @@ export default function EnhancedCodeEditor({
         <div className="bg-[#0b111f] px-4 py-2.5 flex items-center justify-between border-b border-[#3e3e42] flex-shrink-0">
           <div className="flex items-center space-x-2">
             <span className="text-slate-100 font-semibold text-sm">Editor</span>
-            <span className="text-xs text-slate-400">
-              {lines.length} líneas
-            </span>
+            <span className="text-xs text-slate-400">{lines.length} líneas</span>
           </div>
           <div className="flex items-center space-x-2">
             <button
@@ -171,7 +169,7 @@ export default function EnhancedCodeEditor({
               disabled={isRunning}
               className="px-3 py-1 text-xs font-medium bg-purple-600 hover:bg-purple-700 disabled:bg-slate-600 text-white rounded transition-colors"
             >
-              {isRunning ? "Ejecutando..." : "▶ Ejecutar"}
+              {isRunning ? 'Ejecutando...' : '▶ Ejecutar'}
             </button>
           </div>
         </div>
@@ -188,8 +186,8 @@ export default function EnhancedCodeEditor({
                 key={lineNumber}
                 className={`flex items-start justify-center w-full px-1 ${
                   isFocused && lineNumber === currentLine
-                    ? "text-[#c586c0] font-semibold"
-                    : "text-[#858585]"
+                    ? 'text-[#c586c0] font-semibold'
+                    : 'text-[#858585]'
                 }`}
                 style={{ height: `${height}px`, lineHeight: '24px' }}
               >

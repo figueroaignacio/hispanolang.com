@@ -1,16 +1,17 @@
-import { LessonContent } from "@/lib/lessons/types";
+import { LessonContent } from '@/lib/lessons/types';
 
 export const lesson: LessonContent = {
-  badge: { emoji: "🔁", text: "Lección 12" },
-  title: "Bucles Avanzados en",
-  titleGradient: " HispanoLang",
-  description: "hacer/mientras y para cada",
-  prev: { url: "/lecciones/control-flujo-bucles", title: "Control de Flujo" },
-  next: { url: "/lecciones/funciones", title: "Funciones" },
+  badge: { emoji: '🔁', text: 'Lección 12' },
+  title: 'Bucles Avanzados en',
+  titleGradient: ' HispanoLang',
+  description: 'hacer/mientras y para cada',
+  prev: { url: '/lecciones/control-flujo-bucles', title: 'Control de Flujo' },
+  next: { url: '/lecciones/funciones', title: 'Funciones' },
   steps: [
     {
-      title: "El bucle hacer/mientras",
-      content: "hacer/mientras ejecuta el bloque AL MENOS UNA VEZ, luego repite mientras la condición sea verdadera.",
+      title: 'El bucle hacer/mientras',
+      content:
+        'hacer/mientras ejecuta el bloque AL MENOS UNA VEZ, luego repite mientras la condición sea verdadera.',
       code: `variable contador = 1
 
 hacer {
@@ -19,16 +20,18 @@ hacer {
 } mientras (contador <= 5)
 
 mostrar "Fin del bucle"`,
-      explanation: "A diferencia de 'mientras', 'hacer/mientras' garantiza al menos una ejecución porque la condición se evalúa AL FINAL.",
-      challenge: "Crea un contador que empiece en 10 y baje hasta 1 usando hacer/mientras.",
+      explanation:
+        "A diferencia de 'mientras', 'hacer/mientras' garantiza al menos una ejecución porque la condición se evalúa AL FINAL.",
+      challenge: 'Crea un contador que empiece en 10 y baje hasta 1 usando hacer/mientras.',
       validation: {
-        requiredCode: ["hacer", "mientras"],
-        expectedOutputs: ["10", "1"],
+        requiredCode: ['hacer', 'mientras'],
+        expectedOutputs: ['10', '1'],
       },
     },
     {
-      title: "Diferencia con mientras",
-      content: "La diferencia clave: mientras puede no ejecutarse nunca, hacer/mientras siempre ejecuta al menos una vez.",
+      title: 'Diferencia con mientras',
+      content:
+        'La diferencia clave: mientras puede no ejecutarse nunca, hacer/mientras siempre ejecuta al menos una vez.',
       code: `variable x = 10
 
 // Con mientras: nunca se ejecuta porque x ya es >= 5
@@ -46,15 +49,16 @@ hacer {
     y = y + 1
 } mientras (y < 5)
 mostrar "Después de hacer/mientras: se ejecutó una vez"`,
-      explanation: "Usa hacer/mientras cuando necesitas que el código se ejecute al menos una vez.",
-      challenge: "Crea un programa que muestre un número aleatorio y lo repita mientras sea menor a 50.",
+      explanation: 'Usa hacer/mientras cuando necesitas que el código se ejecute al menos una vez.',
+      challenge:
+        'Crea un programa que muestre un número aleatorio y lo repita mientras sea menor a 50.',
       validation: {
-        requiredCode: ["hacer", "mientras"],
+        requiredCode: ['hacer', 'mientras'],
       },
     },
     {
-      title: "El bucle para cada",
-      content: "para cada itera sobre cada elemento de un arreglo de forma simple y elegante.",
+      title: 'El bucle para cada',
+      content: 'para cada itera sobre cada elemento de un arreglo de forma simple y elegante.',
       code: `variable frutas = ["manzana", "banana", "naranja"]
 
 para cada fruta en frutas {
@@ -70,15 +74,17 @@ para cada num en numeros {
     suma = suma + num
 }
 mostrar "Suma total: " + suma`,
-      explanation: "para cada es más limpio que un bucle para cuando solo necesitas los elementos, no los índices.",
-      challenge: "Crea una lista de 4 nombres. Usa para cada para saludar a cada uno con '¡Hola, [nombre]!'.",
+      explanation:
+        'para cada es más limpio que un bucle para cuando solo necesitas los elementos, no los índices.',
+      challenge:
+        "Crea una lista de 4 nombres. Usa para cada para saludar a cada uno con '¡Hola, [nombre]!'.",
       validation: {
-        requiredCode: ["para cada", "en"],
+        requiredCode: ['para cada', 'en'],
       },
     },
     {
-      title: "Para cada vs Para tradicional",
-      content: "Compara ambos enfoques para entender cuándo usar cada uno.",
+      title: 'Para cada vs Para tradicional',
+      content: 'Compara ambos enfoques para entender cuándo usar cada uno.',
       code: `variable colores = ["rojo", "verde", "azul"]
 
 // Bucle para tradicional (cuando necesitas el índice)
@@ -94,15 +100,16 @@ mostrar "Con para cada:"
 para cada color en colores {
     mostrar color
 }`,
-      explanation: "Usa 'para' cuando necesites el índice. Usa 'para cada' cuando solo necesites los valores.",
-      challenge: "Crea una lista de precios. Usa para cada para calcular el total y muéstralo.",
+      explanation:
+        "Usa 'para' cuando necesites el índice. Usa 'para cada' cuando solo necesites los valores.",
+      challenge: 'Crea una lista de precios. Usa para cada para calcular el total y muéstralo.',
       validation: {
-        requiredCode: ["para cada", "en"],
+        requiredCode: ['para cada', 'en'],
       },
     },
     {
-      title: "Para cada con objetos",
-      content: "para cada es muy útil para procesar listas de objetos.",
+      title: 'Para cada con objetos',
+      content: 'para cada es muy útil para procesar listas de objetos.',
       code: `variable personas = [
     { nombre: "Ana", edad: 25 },
     { nombre: "Luis", edad: 30 },
@@ -122,15 +129,16 @@ para cada p en personas {
     sumaEdades = sumaEdades + p.edad
 }
 mostrar "Edad promedio: " + sumaEdades / personas.longitud`,
-      explanation: "Combina para cada con template strings para código muy legible.",
-      challenge: "Crea una lista de productos con nombre y precio. Muestra cada producto y calcula el total.",
+      explanation: 'Combina para cada con template strings para código muy legible.',
+      challenge:
+        'Crea una lista de productos con nombre y precio. Muestra cada producto y calcula el total.',
       validation: {
-        requiredCode: ["para cada", "en", "/\\{.*nombre.*\\}/"],
+        requiredCode: ['para cada', 'en', '/\\{.*nombre.*\\}/'],
       },
     },
     {
-      title: "¡Práctica libre!",
-      content: "Combina los diferentes tipos de bucles según lo que necesites.",
+      title: '¡Práctica libre!',
+      content: 'Combina los diferentes tipos de bucles según lo que necesites.',
       code: `// Ejemplo 1: Menú con hacer/mientras
 variable opcion = 0
 hacer {
@@ -160,11 +168,14 @@ para cada tarea en tareas {
 }
 
 mostrar "Total completadas: " + completadas + "/" + tareas.longitud`,
-      explanation: "hacer/mientras es perfecto para menús. para cada es ideal para procesar colecciones.",
-      challenge: "Crea una lista de notas de estudiantes. Usa para cada para contar cuántos aprobaron (nota >= 60).",
-      summary: "🧠 Recuerda:\n\n• hacer { } mientras (condición) - ejecuta al menos una vez\n• para cada elemento en lista { } - itera sobre elementos\n• hacer/mientras: condición se evalúa al final\n• para cada: no necesitas manejar índices\n• Elige el bucle según tu necesidad",
+      explanation:
+        'hacer/mientras es perfecto para menús. para cada es ideal para procesar colecciones.',
+      challenge:
+        'Crea una lista de notas de estudiantes. Usa para cada para contar cuántos aprobaron (nota >= 60).',
+      summary:
+        '🧠 Recuerda:\n\n• hacer { } mientras (condición) - ejecuta al menos una vez\n• para cada elemento en lista { } - itera sobre elementos\n• hacer/mientras: condición se evalúa al final\n• para cada: no necesitas manejar índices\n• Elige el bucle según tu necesidad',
       validation: {
-        requiredCode: ["para cada", "en", "/>=?\\s*60|>\\s*59/"],
+        requiredCode: ['para cada', 'en', '/>=?\\s*60|>\\s*59/'],
       },
     },
   ],

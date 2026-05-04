@@ -19,7 +19,7 @@ mostrar "Edad + 5: " + (edadNumero + 5) // Edad + 5: 30
 variable cantidadFormulario = "10"
 variable cantidad = entero(cantidadFormulario)
 variable precioUnitario = 100
-variable total = cantidad * precioUnitario
+variable total = cantidad \* precioUnitario
 mostrar "Cantidad: " + cantidad // Cantidad: 10
 mostrar "Total: $" + total // Total: $1000
 
@@ -46,13 +46,13 @@ mostrar "Precio como texto: " + precioTexto // Precio como texto: 99.99
 mostrar "Precio como número: " + precioNumero // Precio como número: 99.99
 
 variable cantidad = 3
-variable subtotal = precioNumero * cantidad
+variable subtotal = precioNumero \* cantidad
 mostrar "Subtotal (3 items): $" + subtotal // Subtotal (3 items): $299.97
 
 // Porcentaje
 variable porcentajeTexto = "15.5"
 variable porcentaje = decimal(porcentajeTexto)
-variable descuento = 100 * (porcentaje / 100)
+variable descuento = 100 \* (porcentaje / 100)
 mostrar "Descuento " + porcentaje + "%: $" + descuento // Descuento 15.5%: $15.5
 
 // Temperatura
@@ -111,13 +111,13 @@ mostrar "falso → " + texto(booleano(respuesta2)) // falso → falso
 // Validación de checkbox
 variable aceptoTerminos = "verdadero"
 si booleano(aceptoTerminos) {
-    mostrar "Términos aceptados" // Términos aceptados
+mostrar "Términos aceptados" // Términos aceptados
 }
 
 // Valor del formulario
 variable recibirOfertas = "falso"
 si !booleano(recibirOfertas) {
-    mostrar "No recibirás ofertas" // No recibirás ofertas
+mostrar "No recibirás ofertas" // No recibirás ofertas
 }`} />
 
 - booleano(texto): Convierte texto a verdadero/falso
@@ -146,8 +146,8 @@ mostrar "nulo es: " + tipoDe(nulo) // nulo es: nulo
 // Validar antes de convertir
 variable dato = "25"
 si tipoDe(dato) == "texto" {
-    variable num = entero(dato)
-    mostrar "Convertido: " + num // Convertido: 25
+variable num = entero(dato)
+mostrar "Convertido: " + num // Convertido: 25
 }`} />
 
 - tipoDe(valor): Retorna el tipo como texto
@@ -164,17 +164,17 @@ variable edad = 25
 mostrar "Tengo " + edad + " años"  // Tengo 25 años
 
 variable precio = 99.99
-mostrar "Precio: $" + precio  // Precio: $99.99
+mostrar "Precio: $" + precio // Precio: $99.99
 
 // Operaciones
 variable textoNumero = "10"
-mostrar textoNumero + 5        // 105
-mostrar entero(textoNumero) + 5  // 15
+mostrar textoNumero + 5 // 105
+mostrar entero(textoNumero) + 5 // 15
 
 // Comparación
 variable cantidadTexto = "100"
 variable cantidadNumero = 100
-mostrar cantidadTexto == cantidadNumero  // falso`} />
+mostrar cantidadTexto == cantidadNumero // falso`} />
 
 - Al concatenar con +, números se convierten a texto
 - Para operaciones matemáticas, convierte explícitamente
@@ -196,15 +196,15 @@ variable resultadoVacio = entero(vacio)
 mostrar "entero('') = " + resultadoVacio // entero('') = 0
 
 // Texto con espacios
-variable conEspacios = "  42  "
+variable conEspacios = " 42 "
 variable limpio = entero(conEspacios.recortar())
-mostrar "entero('  42  '.recortar()) = " + limpio // entero('  42  '.recortar()) = 42
+mostrar "entero(' 42 '.recortar()) = " + limpio // entero(' 42 '.recortar()) = 42
 
 // Validación segura
 variable input = "25"
 si input.longitud() > 0 {
-    variable num = entero(input)
-    mostrar "Número válido: " + num // Número válido: 25
+variable num = entero(input)
+mostrar "Número válido: " + num // Número válido: 25
 }`} />
 
 - Texto inválido → retorna 0 o valor por defecto
@@ -219,7 +219,7 @@ Ejemplo completo procesando datos de un formulario.
 <Code code={`mostrar "=== PROCESANDO FORMULARIO ===" // === PROCESANDO FORMULARIO ===
 
 // Datos del formulario (vienen como texto)
-variable nombreForm = "  María García  "
+variable nombreForm = " María García "
 variable edadForm = "25"
 variable precioForm = "99.99"
 variable aceptaTerminosForm = "verdadero"
@@ -232,18 +232,20 @@ variable aceptaTerminos = booleano(aceptaTerminosForm)
 
 // Validar
 si edad >= 18 y aceptaTerminos {
-    mostrar "Registro válido" // Registro válido
-    mostrar "Nombre: " + nombre // Nombre: María García
-    mostrar "Edad: " + edad // Edad: 25
-    mostrar "Precio: $" + precio // Precio: $99.99
+mostrar "Registro válido" // Registro válido
+mostrar "Nombre: " + nombre // Nombre: María García
+mostrar "Edad: " + edad // Edad: 25
+mostrar "Precio: $" + precio // Precio: $99.99
 
     variable total = precio * 1.21
     mostrar "Total con IVA: $" + texto(total) // Total con IVA: $120.9879
+
 } sino {
-    mostrar "Registro inválido"
+mostrar "Registro inválido"
 }`} />
 
 Resumen de conversiones:
+
 - entero(texto): Texto → Número entero
 - decimal(texto): Texto → Número decimal
 - texto(valor): Cualquier valor → Texto

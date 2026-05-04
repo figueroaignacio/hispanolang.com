@@ -16,9 +16,11 @@ mostrar nombreUsuario
 mostrar likes
 mostrar comentarios`} />
 
-<Output text={`maria_gomez
+<Output
+  text={`maria_gomez
 127
-45`} />
+45`}
+/>
 
 - Escribimos `variable` para crear una caja nueva donde guardar información
 - El nombre de la variable va sin comillas: `likes`, `nombreUsuario`, `comentarios`
@@ -39,9 +41,11 @@ mostrar likes
 likes = 130
 mostrar likes`} />
 
-<Output text={`127
+<Output
+  text={`127
 128
-130`} />
+130`}
+/>
 
 Para cambiar el valor, NO escribas `variable` de nuevo. Solo escribe el nombre de la variable y el nuevo valor: `likes = 128`. El número viejo se borra y entra el nuevo.
 
@@ -58,9 +62,11 @@ mostrar likes
 likes = likes + 10
 mostrar likes`} />
 
-<Output text={`127
+<Output
+  text={`127
 132
-142`} />
+142`}
+/>
 
 `likes + 5` significa: agarra el número que hay en likes (127) y súmale 5. El resultado de la suma (132) se guarda de vuelta en likes. Funciona con suma (`+`), resta (`-`), multiplicación (`*`) y división (`/`).
 
@@ -78,17 +84,19 @@ seguidores -= 10
 mostrar seguidores
 
 variable precio = 50
-precio *= 2
+precio \*= 2
 mostrar precio
 
 precio /= 4
 mostrar precio`} />
 
-<Output text={`100
+<Output
+  text={`100
 125
 115
 100
-25`} />
+25`}
+/>
 
 - `seguidores += 25` es lo mismo que `seguidores = seguidores + 25`
 - `seguidores -= 10` es lo mismo que `seguidores = seguidores - 10`

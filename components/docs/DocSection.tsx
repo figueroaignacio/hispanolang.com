@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Card from "@/components/ui/Card";
-import Button from "@/components/ui/Button";
-import CodeBlock from "@/components/docs/CodeBlock";
+import Link from 'next/link';
+import Card from '@/components/ui/Card';
+import Button from '@/components/ui/Button';
+import CodeBlock from '@/components/docs/CodeBlock';
 
 interface SubSection {
   title: string;
@@ -33,16 +33,12 @@ export default function DocSection({
       <div className="md:p-6">
         <h2 className="text-3xl font-bold text-slate-100 mb-4">{title}</h2>
 
-        {description && (
-          <p className="text-slate-300 mb-6 text-lg">{description}</p>
-        )}
+        {description && <p className="text-slate-300 mb-6 text-lg">{description}</p>}
 
         <div className="space-y-8">
           {subsections.map((subsection, index) => (
             <div key={index}>
-              <h3 className="text-xl font-semibold text-slate-100 mb-3">
-                {subsection.title}
-              </h3>
+              <h3 className="text-xl font-semibold text-slate-100 mb-3">{subsection.title}</h3>
 
               {subsection.description && (
                 <p className="text-slate-300 mb-4">{subsection.description}</p>
@@ -52,7 +48,7 @@ export default function DocSection({
                 <div className="bg-purple-900/30 border border-purple-700/50 rounded-lg p-4 mb-4">
                   <code
                     className="text-purple-300 font-mono"
-                    style={{ fontVariantLigatures: "none" }}
+                    style={{ fontVariantLigatures: 'none' }}
                   >
                     {subsection.syntax}
                   </code>
@@ -67,12 +63,10 @@ export default function DocSection({
 
               {subsection.output && (
                 <div className="mb-4 bg-slate-900/50 border border-slate-700/50 rounded-lg p-4">
-                  <span className="text-xs text-slate-500 uppercase tracking-wide">
-                    Resultado:
-                  </span>
+                  <span className="text-xs text-slate-500 uppercase tracking-wide">Resultado:</span>
                   <pre
                     className="text-sm font-mono mt-2 whitespace-pre"
-                    style={{ fontVariantLigatures: "none" }}
+                    style={{ fontVariantLigatures: 'none' }}
                   >
                     {subsection.output}
                   </pre>
@@ -98,11 +92,7 @@ export default function DocSection({
               <div className="flex-1">
                 {previousSection ? (
                   <Link href={`/documentacion?seccion=${previousSection.id}`}>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start"
-                      prev
-                    >
+                    <Button variant="outline" className="w-full justify-start" prev>
                       {previousSection.title}
                     </Button>
                   </Link>
@@ -115,11 +105,7 @@ export default function DocSection({
               <div className="flex-1">
                 {nextSection ? (
                   <Link href={`/documentacion?seccion=${nextSection.id}`}>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-end"
-                      next
-                    >
+                    <Button variant="outline" className="w-full justify-end" next>
                       {nextSection.title}
                     </Button>
                   </Link>

@@ -6,7 +6,9 @@ La estructura intentar-capturar permite manejar errores de forma controlada sin 
 
 Ejecuta código que puede fallar y captura el error si ocurre.
 
-<Syntax>intentar {`{ /* código */ }`} capturar (error) {`{ /* manejar error */ }`}</Syntax>
+<Syntax>
+  intentar {`{ /* código */ }`} capturar (error) {`{ /* manejar error */ }`}
+</Syntax>
 
 <Code code={`intentar {
     variable x = 10 / 0
@@ -42,9 +44,9 @@ mostrar ""
 mostrar "=== Acceso a índice inválido ===" // === Acceso a índice inválido ===
 variable lista = [1, 2, 3]
 intentar {
-    mostrar lista[10]
+mostrar lista[10]
 } capturar (error) {
-    mostrar "Error: Índice fuera de rango" // Error: Índice fuera de rango
+mostrar "Error: Índice fuera de rango" // Error: Índice fuera de rango
 }
 
 mostrar ""
@@ -53,9 +55,9 @@ mostrar ""
 mostrar "=== Propiedad de nulo ===" // === Propiedad de nulo ===
 variable objeto = nulo
 intentar {
-    mostrar objeto.nombre
+mostrar objeto.nombre
 } capturar (error) {
-    mostrar "Error: No se puede acceder a propiedades de nulo" // Error: No se puede acceder a propiedades de nulo
+mostrar "Error: No se puede acceder a propiedades de nulo" // Error: No se puede acceder a propiedades de nulo
 }`} />
 
 - División entre cero genera error
@@ -99,6 +101,7 @@ mostrar "15 / 3 = " + texto(dividirSeguro(15, 3)) // 15 / 3 = 5`} />
         mostrar "Error: No es un número válido"
         retornar nulo
     }
+
 }
 
 mostrar "=== PROCESANDO EDADES ===" // === PROCESANDO EDADES ===
@@ -153,6 +156,7 @@ mostrar "Edad 3: " + texto(edad3) // Edad 3: nulo`} />
             retornar 0
         }
     }
+
 }
 
 variable carrito = nuevo CarritoCompras()
@@ -165,6 +169,7 @@ mostrar ""
 mostrar "Total del carrito: $" + texto(carrito.calcularTotal()) // Total del carrito: $600`} />
 
 Resumen de manejo de errores:
+
 - intentar { } - Código que puede fallar
 - capturar (error) { } - Manejo del error
 - El programa no se detiene si hay error
