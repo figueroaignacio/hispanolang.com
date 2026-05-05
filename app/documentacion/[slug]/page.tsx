@@ -6,32 +6,7 @@ import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import DocNavLinks from "@/components/docs/DocNavLinks";
-import { getDocContent, getDocSlugs } from "@/lib/mdx";
-
-// Lista de secciones (esto eventualmente vendrá de los archivos)
-const sections = [
-  { id: "variables", title: "Variables" },
-  { id: "constantes", title: "Constantes" },
-  { id: "comentarios", title: "Comentarios" },
-  { id: "tipos-datos", title: "Tipos de Datos" },
-  { id: "metodos-strings", title: "Métodos de Strings" },
-  { id: "template-strings", title: "Template Strings" },
-  { id: "operadores", title: "Operadores" },
-  { id: "condicionales", title: "Condicionales" },
-  { id: "elegir-caso", title: "Elegir/Caso" },
-  { id: "bucles", title: "Bucles" },
-  { id: "funciones", title: "Funciones" },
-  { id: "funciones-flecha", title: "Funciones Flecha" },
-  { id: "funciones-matematicas", title: "Funciones Matemáticas" },
-  { id: "conversion-tipos", title: "Conversión de Tipos" },
-  { id: "metodos-numericos", title: "Métodos Numéricos" },
-  { id: "listas", title: "Listas" },
-  { id: "objetos", title: "Objetos" },
-  { id: "bucles-avanzados", title: "Bucles Avanzados" },
-  { id: "clases", title: "Clases" },
-  { id: "herencia", title: "Herencia" },
-  { id: "manejo-errores", title: "Manejo de Errores" },
-];
+import { getDocContent, getDocSlugs, getDocSections } from "@/lib/mdx";
 
 export async function generateStaticParams() {
   const slugs = getDocSlugs();
@@ -49,6 +24,9 @@ export default async function DocPage({ params }: PageProps) {
   if (!content) {
     notFound();
   }
+
+  // Secciones derivadas de content-collections
+  const sections = getDocSections();
 
   const currentIndex = sections.findIndex((s) => s.id === slug);
   const previousSection = currentIndex > 0 ? sections[currentIndex - 1] : null;
