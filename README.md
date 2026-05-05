@@ -1,14 +1,16 @@
+# HispanoLang Website
+
 <p align="center">
   <img src="./public/hl-main-logo.png" alt="HispanoLang" width="180"/>
 </p>
 
 <p align="center">
-  <strong>The Spanish programming language</strong>
+  <strong>The official website and playground for HispanoLang</strong>
 </p>
 
 <p align="center">
-  A modern, expressive, and completely Spanish-based programming language.<br/>
-  Designed to eliminate language barriers in tech education.
+  A modern, interactive platform to learn and practice HispanoLang — the Spanish-based programming language.<br/>
+  Built with Next.js, TypeScript, and Tailwind CSS.
 </p>
 
 ---
@@ -17,19 +19,20 @@
 
 ---
 
-## About
+## About This Project
 
-**HispanoLang** is a modern programming language designed for Spanish-speaking students who want to learn to code. Its syntax is entirely in Spanish, making it ideal for beginners and those who prefer learning in their native language.
+This is the official repository for the **HispanoLang website** — an interactive learning platform that includes:
+
+- **Online Playground**: Write and run HispanoLang code directly in the browser
+- **Interactive Lessons**: Structured tutorials with exercises and automatic validation
+- **Complete Documentation**: Full language reference in Spanish
 
 ### Key Features
 
-- **100% Spanish Keywords**: All language keywords are in Spanish (`variable`, `constante`, `si`, `sino`, `mientras`, `para`, `funcion`, `clase`, etc.)
-- **Built-in Commands**: `mostrar` (print), `leer` (input)
-- **Built-in Functions**: Type conversion (`entero`, `decimal`, `texto`, `booleano`), math functions (`raiz`, `potencia`, `seno`, `coseno`), arrays, strings, and more
-- **OOP Support**: Classes, inheritance (`extiende`), constructors, `este` keyword
-- **Interactive Playground**: Online code editor to write and run HispanoLang code
-- **Complete Documentation**: Full language reference in Spanish
-- **Structured Lessons**: Tutorials with exercises and automatic validation
+- **Real-time Code Execution**: Run HispanoLang code directly in the browser
+- **Syntax Highlighting**: Custom syntax highlighter for Spanish keywords
+- **Progress Tracking**: Track your learning progress through lessons
+- **Responsive Design**: Works on desktop and mobile devices
 
 ### Tech Stack
 
@@ -37,6 +40,7 @@
 - **TypeScript**
 - **React 19**
 - **Tailwind CSS 4**
+- **MDX** for documentation
 
 ### Getting Started
 
@@ -76,28 +80,29 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 hispanolang.com/
 ├── app/                    # Next.js App Router pages
 │   ├── page.tsx            # Landing page
-│   ├── playground/         # Interactive playground
+│   ├── playground/         # Interactive playground page
 │   └── documentacion/       # Documentation pages
 ├── components/             # React components
-│   ├── sections/           # Page sections
-│   ├── playground/         # Playground components
-│   ├── lessons/            # Lesson components
-│   └── ui/                 # UI components
+│   ├── sections/           # Page sections (Hero, Features, etc.)
+│   ├── playground/         # Playground components (Editor, Output, etc.)
+│   ├── lessons/            # Lesson components (Cards, Progress, etc.)
+│   ├── docs/              # Documentation components
+│   └── ui/                # Reusable UI components
 ├── lib/                    # Core libraries
-│   ├── syntax/             # Syntax highlighting
-│   ├── validation/         # Exercise validation
-│   ├── content/            # Lesson content (MDX)
-│   └── lessons/            # Lesson utilities
+│   ├── syntax/            # Syntax highlighting system
+│   ├── validation/        # Exercise validation system
+│   ├── content/           # Lesson content (MDX + lesson.ts)
+│   └── lessons/           # Lesson utilities
 └── public/                 # Static assets
 ```
+
+### Related Repositories
+
+- [hispano-lang](https://github.com/nicvazquezdev/hispano-lang) - The HispanoLang compiler/interpreter (npm package)
 
 ### Contributing
 
 Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting a PR.
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ### Credits
 
