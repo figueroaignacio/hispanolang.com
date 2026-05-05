@@ -1,26 +1,16 @@
-import fs from "fs";
-import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { mdxComponents } from "@/components/mdx";
-
-const CONTENT_PATH = path.join(process.cwd(), "lib/content");
-
-export interface DocMeta {
-  title: string;
-  emoji: string;
-}
+import { allDocs } from "content-collections";
 
 export async function getDocContent(slug: string) {
-  const filePath = path.join(CONTENT_PATH, slug, "docs.mdx");
+  const doc = allDocs.find((d) => d.slug === slug);
 
-  if (!fs.existsSync(filePath)) {
+  if (!doc) {
     return null;
   }
 
-  const source = fs.readFileSync(filePath, "utf-8");
-
   const { content } = await compileMDX({
-    source,
+    source: doc.content,
     components: mdxComponents,
     options: {
       parseFrontmatter: true,
@@ -31,12 +21,13 @@ export async function getDocContent(slug: string) {
 }
 
 export function getDocSlugs(): string[] {
-  if (!fs.existsSync(CONTENT_PATH)) {
-    return [];
-  }
+  return allDocs
+    .sort((a, b) => a.order - b.order)
+    .map((doc) => doc.slug);
+}
 
-  return fs.readdirSync(CONTENT_PATH).filter((dir) => {
-    const docsPath = path.join(CONTENT_PATH, dir, "docs.mdx");
-    return fs.existsSync(docsPath);
-  });
+export function getDocSections(): { id: string; title: string }[] {
+  return allDocs
+    .sort((a, b) => a.order - b.order)
+    .map((doc) => ({ id: doc.slug, title: doc.title }));
 }
