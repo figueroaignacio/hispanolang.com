@@ -28,7 +28,7 @@ const docsOrder = [
 
 const docs = defineCollection({
   name: 'docs',
-  directory: '/content',
+  directory: 'content/documentacion',
   include: '**/docs.mdx',
   schema: z.object({
     content: z.string(),
