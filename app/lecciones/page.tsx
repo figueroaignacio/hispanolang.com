@@ -16,7 +16,7 @@ export default function LeccionesPage() {
 
       <Header />
 
-      <main className="relative z-10 pt-20">
+      <main id="main-content" className="relative z-10 pt-20">
         <Section
           background="light"
           title="Lecciones Interactivas de"

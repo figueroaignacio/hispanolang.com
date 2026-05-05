@@ -66,7 +66,7 @@ export default async function DocPage({ params }: PageProps) {
 
       <Header />
 
-      <main className="relative z-10 pt-20">
+      <main id="main-content" className="relative z-10 pt-20">
         <Section
           background="light"
           title="Documentación de"

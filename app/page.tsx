@@ -105,7 +105,7 @@ export default function Home() {
         </div>
 
         <Header />
-        <main className="relative z-10">
+        <main id="main-content" className="relative z-10">
           <Hero />
           <Features />
           <Playground />

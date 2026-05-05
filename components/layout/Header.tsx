@@ -128,9 +128,11 @@ export default function Header() {
               ref={buttonRef}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden text-slate-300 p-1 relative w-6 h-6"
-              aria-label="Toggle menu"
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
-              <span className="sr-only">Abrir menú</span>
+              <span className="sr-only">{isMenuOpen ? "Cerrar menú" : "Abrir menú"}</span>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <span
                   className={`block w-5 h-0.5 bg-slate-300 transition-all duration-300 ${
@@ -155,6 +157,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-menu"
         ref={menuRef}
         className={`md:hidden absolute top-full left-0 right-0 mt-2 mx-3 bg-slate-900/95 backdrop-blur-lg border border-slate-700/50 rounded-xl shadow-xl transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
